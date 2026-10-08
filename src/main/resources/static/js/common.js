@@ -384,6 +384,40 @@
     }
 
     /**
+     * 复制文本到剪贴板（通用，所有复制按钮共用）。
+     * 优先走 Clipboard API（HTTPS / localhost 安全上下文）；在 HTTP + IP 等非安全上下文下
+     * navigator.clipboard 不可用，自动降级为 document.execCommand('copy')，保证任意环境可复制。
+     */
+    function copyText(text) {
+        if (text == null || text === '') {
+            return Promise.reject(new Error('empty text'));
+        }
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+        }
+        return new Promise((resolve, reject) => {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            ta.style.top = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            ta.setSelectionRange(0, text.length);
+            let ok = false;
+            try {
+                ok = document.execCommand('copy');
+            } catch (e) {
+                // ignore
+            }
+            document.body.removeChild(ta);
+            ok ? resolve() : reject(new Error('execCommand copy failed'));
+        });
+    }
+
+    /**
      * 渲染全局侧边栏（登录后的所有页面都用）。
      *
      * 支持两种调用：
@@ -789,7 +823,7 @@
         mask.querySelector('#ax-userid-copy').addEventListener('click', () => {
             const uid = mask.querySelector('#ax-prof-userid').value.trim();
             if (!uid) return;
-            navigator.clipboard.writeText(uid).then(
+            DA.copyText(uid).then(
                 () => DA.showToast('用户 ID 已复制', 'success'),
                 () => DA.showToast('复制失败', 'error')
             );
@@ -1008,7 +1042,7 @@
         // api
         apiGet, apiPost, apiPut, apiDelete, apiUpload, apiStream,
         // ui
-        getTheme, applyTheme, toggleTheme, showToast,
+        getTheme, applyTheme, toggleTheme, showToast, copyText,
         renderHeader, bindHeaderEvents, openProfileCenter, loadSidebarConversations,
         upsertSidebarConversation, escapeHtml,
         // 常量

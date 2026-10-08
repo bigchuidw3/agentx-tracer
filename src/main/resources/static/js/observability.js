@@ -118,7 +118,7 @@
 
             async function copyText(text) {
                 try {
-                    await navigator.clipboard.writeText(text);
+                    await DA.copyText(text);
                     DA.showToast('已复制到剪贴板', 'success');
                 } catch (e) {
                     DA.showToast('复制失败', 'error');
