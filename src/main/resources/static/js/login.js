@@ -18,6 +18,7 @@ createApp({
         const loading = ref(false);
         const errorMsg = ref('');
         const codeCooldown = ref(0);
+        const sending = ref(false);
         let cooldownTimer = null;
 
         const modeTitle = computed(() => {
@@ -48,13 +49,15 @@ createApp({
             }, 1000);
         }
 
-        /** 发送验证码（登录/注册/重置共用） */
+        /** 发送验证码（登录/注册/重置共用）。发送中与冷却期均不可重复点击。 */
         async function sendCode() {
+            if (sending.value || codeCooldown.value > 0) return;
             errorMsg.value = '';
             if (!/^1\d{10}$/.test(phone.value.trim())) {
                 errorMsg.value = '请输入正确的手机号';
                 return;
             }
+            sending.value = true;
             try {
                 // 注册模式：用户名 + 手机号重复预校验，避免用户白等一条短信
                 if (mode.value === 'register') {
@@ -78,6 +81,8 @@ createApp({
                 startCooldown();
             } catch (e) {
                 errorMsg.value = e.message || '验证码发送失败';
+            } finally {
+                sending.value = false;
             }
         }
 
@@ -171,7 +176,7 @@ createApp({
 
         return {
             mode, modeTitle, switchMode, loginType, username, password, showPassword,
-            phone, smsCode, realName, loading, errorMsg, codeCooldown,
+            phone, smsCode, realName, loading, errorMsg, codeCooldown, sending,
             sendCode, onSubmit, onRegister, onReset
         };
     }
