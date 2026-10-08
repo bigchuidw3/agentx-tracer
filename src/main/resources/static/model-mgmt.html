@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型管理 · AgentX Tracer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/model.css">
+    
+    <script src="vendor/js/vue.global.js"></script>
+    <link rel="stylesheet" href="vendor/css/all.min.css">
+    <script>
+        (function () {
+            var t = 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <div id="ax-model-app">
+        <div id="da-header-host"></div>
+
+        <main class="ax-page">
+            <div class="ax-page-head">
+                <div>
+                    <h2><i class="fas fa-microchip"></i> 模型管理</h2>
+                    <p class="ax-page-sub">配置 OpenAI 兼容端点与计量单价；激活的模型即平台实际使用的模型，保存后即时生效</p>
+                </div>
+                <button class="ax-btn primary" @click="save" :disabled="saving">
+                    <i class="fas" :class="saving ? 'fa-spinner fa-spin' : 'fa-floppy-disk'"></i>
+                    {{ saving ? '保存中…' : '保存并生效' }}
+                </button>
+            </div>
+
+            <!-- 加载中 -->
+            <div class="ax-card ax-model-card" v-if="!form && loading" style="text-align:center;padding:48px 20px;color:var(--ax-text-3);">
+                <i class="fas fa-spinner fa-spin"></i> 加载中…
+            </div>
+
+            <!-- 模型卡片 -->
+            <div class="ax-card ax-model-card" v-if="form">
+                <div class="ax-model-head">
+                    <div class="ax-model-title">
+                        <span class="ax-chip" :class="configured ? 'ok' : 'warn'">
+                            <span class="dot"></span>{{ configured ? '已生效' : '未配置' }}
+                        </span>
+                        <span class="ax-model-name">{{ form.modelName || '未配置模型' }}</span>
+                    </div>
+                </div>
+
+                <div class="ax-form-grid">
+                    <div class="ax-field">
+                        <label>Base URL（OpenAI 兼容端点）</label>
+                        <input class="ax-input mono" v-model="form.baseUrl" placeholder="https://dashscope.aliyuncs.com/compatible-mode/v1"/>
+                    </div>
+                    <div class="ax-field">
+                        <label>模型标识</label>
+                        <input class="ax-input mono" v-model="form.modelName" placeholder="qwen-plus / XinCube"/>
+                    </div>
+                    <div class="ax-field">
+                        <label>API Key</label>
+                        <input class="ax-input mono" v-model="form.apiKey" placeholder="sk-…（掩码显示，留原值则不修改）"/>
+                    </div>
+                    <div class="ax-field">
+                        <label>温度（0.0 - 2.0）</label>
+                        <input class="ax-input mono" type="number" step="0.1" min="0" max="2" v-model.number="form.temperature" placeholder="0.7"/>
+                    </div>
+                    <div class="ax-field">
+                        <label>输入单价（元 / 百万 token）</label>
+                        <input class="ax-input mono" v-model="form.inputPrice" placeholder="0.80"/>
+                    </div>
+                    <div class="ax-field">
+                        <label>输出单价（元 / 百万 token）</label>
+                        <input class="ax-input mono" v-model="form.outputPrice" placeholder="2.00"/>
+                    </div>
+                    <div class="ax-field">
+                        <label>上下文窗口（用于统计页占用进度条）</label>
+                        <div class="ax-context-row">
+                            <input class="ax-input mono" type="number" min="1" v-model.number="contextValue" placeholder="128"/>
+                            <select class="ax-input mono ax-context-unit" v-model="contextUnit">
+                                <option value="K">K</option>
+                                <option value="M">M</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ax-model-foot">
+                    <button class="ax-btn" @click="test" :disabled="testing">
+                        <i class="fas" :class="testing ? 'fa-spinner fa-spin' : 'fa-plug-circle-check'"></i>
+                        {{ testing ? '测试中…' : '连通性测试' }}
+                    </button>
+                    <div class="ax-test-result" v-if="testResult" :class="testResult.success ? 'ok' : 'err'">
+                        <i class="fas" :class="testResult.success ? 'fa-circle-check' : 'fa-circle-xmark'"></i>
+                        <template v-if="testResult.success">
+                            连通成功 · {{ testResult.latencyMs }}ms ·
+                            Token计量 {{ testResult.usageReturned ? '可用' : '不可用（端点未返回 usage）' }}
+                        </template>
+                        <template v-else>失败：{{ testResult.error }}</template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 计量说明 -->
+            <div class="ax-card ax-hint-card">
+                <div class="ax-hint-title"><i class="fas fa-coins"></i> 计量说明</div>
+                <ul class="ax-hint-list">
+                    <li><b>保存即生效</b>：平台所有智能体调用立即走此配置，无需重启</li>
+                    <li>成本按<b>当前单价实时折算</b>：成本 = 输入token/100万 × 输入单价 + 输出token/100万 × 输出单价，修改单价不追溯历史</li>
+                    <li>Token 采集依赖 <code class="ax-mono">stream_options.include_usage</code>，平台已默认开启；端点不返回 usage 时该次调用 Token 记 0</li>
+                    <li>上下文窗口用于调用追踪-统计页签的上下文占用进度条与膨胀曲线</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/model.js"></script>
+</body>
+</html>

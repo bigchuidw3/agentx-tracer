@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 · AgentX Tracer</title>
+    <link rel="icon" href="images/agentx-logo-mark.webp">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="vendor/js/vue.global.js"></script>
+    <link rel="stylesheet" href="vendor/css/all.min.css">
+</head>
+<body class="ax-login-body">
+    <canvas id="attackMap" class="ax-auth-map" aria-hidden="true"></canvas>
+
+    <div id="da-login-app">
+        <div class="ax-auth-card">
+            <!-- logo：图标 + 产品名，居中 -->
+            <div class="ax-auth-logo">
+                <img src="images/agentx-logo-mark.webp" alt="AgentX"/>
+                <span>AgentX Tracer</span>
+            </div>
+
+            <!-- 登录视图 -->
+            <template v-if="mode !== 'register' && mode !== 'reset'">
+                <div class="ax-auth-tabs">
+                    <button type="button" :class="{ active: loginType === 'pwd' }" @click="loginType = 'pwd'">密码登录</button>
+                    <button type="button" :class="{ active: loginType === 'sms' }" @click="loginType = 'sms'">验证码登录</button>
+                </div>
+
+                <form @submit.prevent="onSubmit">
+                    <p class="ax-login-error" v-if="errorMsg"><i class="fas fa-circle-exclamation"></i> {{ errorMsg }}</p>
+
+                    <div class="ax-form-group" v-if="loginType === 'pwd'">
+                        <label class="ax-form-label">用户名</label>
+                        <input class="ax-form-input" v-model="username" type="text" autocomplete="username"
+                               placeholder="请输入用户名" :disabled="loading"/>
+                    </div>
+                    <div class="ax-form-group pwd-row" v-if="loginType === 'pwd'">
+                        <label class="ax-form-label">密码</label>
+                        <input class="ax-form-input" v-model="password" :type="showPassword ? 'text' : 'password'"
+                               autocomplete="current-password" placeholder="请输入密码" :disabled="loading"/>
+                        <button type="button" class="ax-pwd-toggle" @click="showPassword = !showPassword" tabindex="-1">
+                            <i class="fas" :class="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                        </button>
+                    </div>
+
+                    <div class="ax-form-group" v-if="loginType === 'sms'">
+                        <label class="ax-form-label">手机号</label>
+                        <input class="ax-form-input" v-model="phone" type="tel" maxlength="11"
+                               placeholder="请输入手机号" :disabled="loading"/>
+                    </div>
+                    <div class="ax-form-group" v-if="loginType === 'sms'">
+                        <label class="ax-form-label">验证码</label>
+                        <div class="ax-code-row">
+                            <input class="ax-form-input" v-model="smsCode" type="text" maxlength="6"
+                                   placeholder="6 位验证码" :disabled="loading"/>
+                            <button type="button" class="ax-code-btn" @click="sendCode"
+                                    :disabled="codeCooldown > 0 || loading">
+                                {{ codeCooldown > 0 ? codeCooldown + 's' : '获取验证码' }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="ax-login-submit" :disabled="loading">
+                        {{ loading ? '登录中…' : '登 录' }}
+                    </button>
+                    <div class="ax-auth-aux">
+                        <a href="javascript:void(0)" @click="switchMode('reset')">忘记密码？</a>
+                    </div>
+                </form>
+
+                <div class="ax-auth-switch">
+                    还没有账号？<a href="javascript:void(0)" @click="switchMode('register')">注册</a>
+                </div>
+            </template>
+
+            <!-- 注册视图 -->
+            <template v-if="mode === 'register'">
+                <div class="ax-auth-view-title">注册账号</div>
+                <form @submit.prevent="onRegister">
+                    <p class="ax-login-error" v-if="errorMsg"><i class="fas fa-circle-exclamation"></i> {{ errorMsg }}</p>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">用户名</label>
+                        <input class="ax-form-input" v-model="username" type="text" autocomplete="username"
+                               placeholder="设置登录用户名" :disabled="loading"/>
+                    </div>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">手机号</label>
+                        <input class="ax-form-input" v-model="phone" type="tel" maxlength="11"
+                               placeholder="请输入手机号" :disabled="loading"/>
+                    </div>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">验证码</label>
+                        <div class="ax-code-row">
+                            <input class="ax-form-input" v-model="smsCode" type="text" maxlength="6"
+                                   placeholder="6 位验证码" :disabled="loading"/>
+                            <button type="button" class="ax-code-btn" @click="sendCode"
+                                    :disabled="codeCooldown > 0 || loading">
+                                {{ codeCooldown > 0 ? codeCooldown + 's' : '获取验证码' }}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">密码</label>
+                        <input class="ax-form-input" v-model="password" type="password" autocomplete="new-password"
+                               placeholder="设置登录密码" :disabled="loading"/>
+                    </div>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">真实姓名</label>
+                        <input class="ax-form-input" v-model="realName" type="text" placeholder="选填" :disabled="loading"/>
+                    </div>
+                    <button type="submit" class="ax-login-submit" :disabled="loading">
+                        {{ loading ? '注册中…' : '注册并登录' }}
+                    </button>
+                </form>
+                <div class="ax-auth-switch">
+                    已有账号？<a href="javascript:void(0)" @click="switchMode('pwd')">去登录</a>
+                </div>
+            </template>
+
+            <!-- 重置密码视图 -->
+            <template v-if="mode === 'reset'">
+                <div class="ax-auth-view-title">重置密码</div>
+                <form @submit.prevent="onReset">
+                    <p class="ax-login-error" v-if="errorMsg"><i class="fas fa-circle-exclamation"></i> {{ errorMsg }}</p>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">手机号</label>
+                        <input class="ax-form-input" v-model="phone" type="tel" maxlength="11"
+                               placeholder="注册时使用的手机号" :disabled="loading"/>
+                    </div>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">验证码</label>
+                        <div class="ax-code-row">
+                            <input class="ax-form-input" v-model="smsCode" type="text" maxlength="6"
+                                   placeholder="6 位验证码" :disabled="loading"/>
+                            <button type="button" class="ax-code-btn" @click="sendCode"
+                                    :disabled="codeCooldown > 0 || loading">
+                                {{ codeCooldown > 0 ? codeCooldown + 's' : '获取验证码' }}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ax-form-group">
+                        <label class="ax-form-label">新密码</label>
+                        <input class="ax-form-input" v-model="password" type="password"
+                               placeholder="设置新密码" :disabled="loading"/>
+                    </div>
+                    <button type="submit" class="ax-login-submit" :disabled="loading">重置密码</button>
+                    <div class="ax-auth-aux center">
+                        <a href="javascript:void(0)" @click="switchMode('pwd')"><i class="fas fa-arrow-left"></i> 返回登录</a>
+                    </div>
+                </form>
+            </template>
+        </div>
+    </div>
+    <script src="js/attack-map.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* ==================== 工作区文件目录 ==================== */
+.da-ws-card {
+    background: var(--bg-surface, #fff); border-radius: var(--ax-radius-lg);
+    box-shadow: var(--ax-shadow); padding: 16px 18px;
+}
+
+.da-ws-toolbar {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;
+}
+.da-ws-breadcrumb {
+    flex: 1; display: flex; align-items: center; gap: 6px;
+    font-size: 13px; color: var(--ax-text-3); overflow: hidden; white-space: nowrap;
+    min-width: 120px;
+}
+.da-ws-breadcrumb a { color: var(--ax-text-2); text-decoration: none; }
+.da-ws-breadcrumb a:hover { color: var(--ax-primary); }
+.da-ws-breadcrumb .sep { color: var(--ax-text-3); }
+.da-ws-breadcrumb .cur { color: var(--ax-text); font-weight: 600; }
+
+.da-ws-search { display: flex; gap: 6px; }
+.da-ws-search .ax-input { width: 180px; }
+
+.da-ws-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.da-ws-table th {
+    text-align: left; padding: 9px 10px; color: var(--ax-text-2); font-weight: 600;
+    border-bottom: 1px solid var(--ax-border); white-space: nowrap;
+}
+.da-ws-table td { padding: 8px 10px; border-bottom: 1px solid var(--ax-border-light); white-space: nowrap; }
+.da-ws-table td.name { cursor: pointer; max-width: 420px; overflow: hidden; text-overflow: ellipsis; }
+.da-ws-table td.name i { color: var(--ax-text-3); margin-right: 8px; width: 14px; }
+.da-ws-table td.name:hover { color: var(--ax-primary); }
+.da-ws-table td.ops { display: flex; gap: 6px; }
+.da-ws-table .empty { text-align: center; color: var(--ax-text-3); padding: 32px 0 !important; }
+.da-ws-table .da-btn.sm { padding: 4px 10px; font-size: 12px; }
+.da-ws-table .da-btn.sm.danger { color: var(--ax-danger); border-color: #fecaca; }
+.da-ws-table .da-btn.sm.danger:hover { background: #fef2f2; border-color: var(--ax-danger); }
+
+/* 预览对话框 */
+.da-ws-preview-mask {
+    position: fixed; inset: 0; background: rgba(23,26,32,.5); z-index: 1300;
+    display: flex; align-items: center; justify-content: center; backdrop-filter: blur(2px);
+}
+.da-ws-preview-card {
+    width: min(920px, 92vw); max-height: 86vh; background: var(--ax-surface, #fff);
+    border-radius: 14px; box-shadow: var(--ax-shadow-pop); display: flex; flex-direction: column; overflow: hidden;
+}
+.da-ws-preview-card .head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px; border-bottom: 1px solid var(--ax-border-light); font-size: 13px;
+}
+.da-ws-preview-close {
+    border: none; background: transparent; color: var(--ax-text-3); cursor: pointer;
+    width: 28px; height: 28px; border-radius: 8px; font-size: 15px;
+}
+.da-ws-preview-close:hover { background: var(--ax-primary-soft); color: var(--ax-primary); }
+.da-ws-preview-card .body { overflow: auto; padding: 16px; }
+.da-ws-preview-card .body img { max-width: 100%; display: block; margin: 0 auto; }
+.da-ws-preview-card .body pre {
+    margin: 0; font-family: 'JetBrains Mono', Consolas, monospace; font-size: 12.5px;
+    line-height: 1.6; color: var(--ax-text); white-space: pre-wrap; word-break: break-all;
+}
+
+/* 复选框列 */
+.da-ws-table th.chk, .da-ws-table td.chk { width: 40px; text-align: center; padding: 8px 4px; }
+.da-ws-table th.chk input, .da-ws-table td.chk input { width: 15px; height: 15px; cursor: pointer; accent-color: var(--ax-primary); }
+
+/* 确认对话框 */
+.da-confirm-mask {
+    position: fixed; inset: 0; background: rgba(23,26,32,.5); z-index: 1300;
+    display: flex; align-items: center; justify-content: center; backdrop-filter: blur(2px);
+}
+.da-confirm-card {
+    width: 400px; max-width: 90vw; background: var(--ax-surface, #fff); border-radius: 14px;
+    box-shadow: var(--ax-shadow-pop); padding: 20px;
+}
+.da-confirm-card h3 {
+    margin: 0 0 8px; font-size: 15px; color: var(--ax-text); display: flex; align-items: center; gap: 8px;
+}
+.da-confirm-card h3 i.fa-triangle-exclamation { color: var(--ax-danger); }
+.da-confirm-card h3 i.fa-circle-question { color: var(--ax-primary); }
+.da-confirm-card p { margin: 0 0 18px; font-size: 13px; color: var(--ax-text-2); line-height: 1.7; word-break: break-word; }
+.da-confirm-card .actions { display: flex; justify-content: flex-end; gap: 10px; }
+.da-confirm-card .da-btn.danger { color: #fff; background: var(--ax-danger); border: none; }
+.da-confirm-card .da-btn.danger:hover { background: #dc2626; }

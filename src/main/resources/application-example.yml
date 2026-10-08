@@ -1,0 +1,126 @@
+server:
+  port: 8090
+  error:
+    include-message: always
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/agentx_tracer?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: root
+    password: your-password
+  ai:
+    openai:
+      api-key: your-api-key
+      base-url: https://your-model-endpoint/
+      chat:
+        options:
+          model: XinCube
+          temperature: 0.7
+    # 以下为自动装配占位 key：deepseek 由 spring-ai-agentx-core
+    # 传递依赖引入，不配占位则自动装配因缺 key 启动失败；实际模型走模型管理手动构建
+    anthropic:
+      api-key: change-this-api-key
+    deepseek:
+      api-key: change-this-api-key
+    zhipuai:
+      api-key: change-this-api-key
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 300MB
+  data:
+    redis:
+      host: your-server-host   # 记得改成你自己的
+      port: 6389
+      database: 0
+      timeout: 5s
+      password: your-password
+
+# ============ 模型接入 & 短信验证码 ============
+# 模型统一在「模型配置」页面维护（llm_model 表，保存即生效），此处仅保留默认温度
+# 短信：mock=验证码打日志（开发联调），aliyun/pnvs=真实短信（凭据另配）
+app:
+  model:
+    temperature: 0.7
+  # 工具沙箱根目录（FileSystem/Grep 只允许访问这里和 skills 目录；上传文件本地副本在 workspace/uploads/ 下）
+  workspace-dir: ./workspace
+  # 宿主机 workspace 绝对路径（沙箱容器 bind mount 用；本地调测留空即可）
+  workspace-host-dir:
+  # 宿主机 skills 绝对路径（沙箱容器 bind mount 用；本地调测留空即可）
+  skills-host-dir:
+  # 沙箱容器镜像
+  sandbox-image: python:3.12
+  # 沙箱容器网络：true=开通（bridge），false=禁用
+  sandbox-network-enabled: true
+  sms:
+    provider: pnvs
+    code-ttl-seconds: 300
+    send-cooldown-seconds: 60
+    max-verify-attempts: 5
+    pnvs:
+      access-key-id: "your-access-key-id"
+      access-key-secret: "your-access-key-secret"
+      sign-name: "速通互联验证码"
+      template-code: "100001"
+
+# Skills 目录（技能以 SKILL.md 形式存放，主智能体经 SkillsTool 按需加载）
+skills:
+  directory: ./skills
+
+# 部署模式：standalone=单实例（默认）；cluster=多实例，断链续传事件写 Redis Stream、
+# 中断走 pub/sub 广播、并发控制走 Redis 锁（多实例部署时每个实例都配 cluster）
+deploy:
+  mode: standalone
+
+# MinIO（文件存储，bucket 不存在时自动创建）
+minio:
+  endpoint: http://your-server-host:19000/   # 记得改成你自己的
+  access-key: minioadmin
+  secret-key: minioadmin
+  bucket-name: agentx-tracer-files
+
+# 文件上传限制
+file:
+  max-count: 3
+  max-size-mb: 100
+
+# Sa-Token 认证
+sa-token:
+  token-name: satoken          # token 名称（Cookie/Header 名）
+  timeout: 2592000             # token 有效期（秒），30 天
+  active-timeout: -1           # 临时 token 活跃频率（-1 不限制）
+  is-concurrent: true          # 允许同一账号并发登录
+  is-share: true               # 多人登录同一账号时共用一个 token
+  token-style: uuid
+  is-log: false
+  is-read-cookie: true
+  is-read-header: true
+  is-read-body: false
+
+# Opik 可观测性（内置全局配置，所有用户共用，仅各自开关是否同步）
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: https://www.comet.com/opik/api/v1/private/otel/v1/traces
+      headers:
+        Authorization: your-opik-token
+        Comet-Workspace: your-opik-workspace
+        projectName: agentx-tracer
+
+logging:
+  level:
+    com.agentx.tracer: INFO
+    com.agentx.ai: INFO
+    org.springframework.ai: INFO

@@ -1,0 +1,250 @@
+/* =============================================================================
+ * Skills 管理页专属样式（仅 skills.html 使用）。
+ *
+ * 通用样式（变量、顶栏、按钮等）请在 common.css 中查看。
+ * ========================================================================== */
+
+/* ============== 整体布局 ============== */
+#da-skills-app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-page);
+}
+
+.da-skills-main {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+/* ============== 页面容器 ============== */
+.da-skills-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+}
+
+/* ============== Skill 上传区 ============== */
+.da-skill-upload-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 2px dashed var(--border-strong);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all .2s;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    user-select: none;
+}
+
+.da-skill-upload-area:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.da-skill-upload-area.active {
+    border-color: var(--primary-color);
+    background: var(--primary-bg);
+    color: var(--primary-color);
+}
+
+/* ============== Skill 卡片网格 ============== */
+.da-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.da-skill-manage-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 168px;
+    cursor: pointer;
+}
+
+.da-skill-manage-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+.da-skill-manage-card.disabled {
+    opacity: 0.55;
+}
+
+/* 左上角开关行 */
+.da-skill-manage-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* 主体（name + desc）占满剩余高度，让 actions 贴底 */
+.da-skill-manage-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.da-skill-manage-name-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+}
+
+.da-skill-manage-name-row i {
+    color: var(--primary-color);
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.da-skill-manage-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.da-skill-manage-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 右下角操作区 */
+.da-skill-manage-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.da-skill-manage-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 13px;
+    transition: all .2s;
+}
+
+.da-skill-manage-actions button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: var(--primary-bg);
+}
+
+.da-skill-manage-actions .da-btn-danger:hover {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+    background: var(--danger-bg);
+}
+
+/* ============== 空状态 ============== */
+.da-skill-page-empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-muted);
+}
+
+.da-skill-page-empty i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
+    color: var(--border-strong);
+}
+
+/* ============== Skill 启用开关 ============== */
+.da-skill-toggle {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.da-skill-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.da-skill-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--border-strong);
+    transition: .3s;
+    border-radius: 20px;
+}
+
+.da-skill-toggle-slider::before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+.da-skill-toggle input:checked + .da-skill-toggle-slider {
+    background: var(--primary-color);
+}
+
+.da-skill-toggle input:checked + .da-skill-toggle-slider::before {
+    transform: translateX(16px);
+}
+
+/* ============== 响应式 ============== */
+@media (max-width: 600px) {
+    .da-skill-grid {
+        grid-template-columns: 1fr;
+    }
+    .da-page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
+/* ==================== 技能分组标题（ToC 隔离） ==================== */
+.ax-skill-group-title {
+    display: flex; align-items: baseline; gap: 8px; margin: 18px 2px 12px;
+    font-size: 13.5px; font-weight: 700; color: var(--ax-text);
+}
+.ax-skill-group-title:first-child { margin-top: 0; }
+.ax-skill-group-title i { color: var(--ax-primary); }
+.ax-skill-group-title span { font-size: 11.5px; font-weight: 400; color: var(--ax-text-3); }
+.da-skill-manage-card.readonly .da-skill-manage-actions { opacity: .4; }
+.da-skill-page-empty.slim { padding: 22px 0; }
+.da-skill-page-empty.slim p { font-size: 12.5px; }

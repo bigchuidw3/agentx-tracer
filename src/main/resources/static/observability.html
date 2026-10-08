@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调用追踪 · AgentX Tracer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/observability.css">
+    
+    <script src="vendor/js/vue.global.js"></script>
+    <script src="vendor/js/echarts.min.js"></script>
+    <script src="vendor/js/json-formatter.umd.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/all.min.css">
+    <script>
+        (function () {
+            var t = 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <div id="da-observ-app">
+        <div id="da-header-host"></div>
+
+        <main class="ax-page da-observ-page">
+                <!-- 页面头 -->
+                <div class="ax-page-head">
+                    <div>
+                        <h2><i class="fas fa-chart-line"></i> 调用追踪</h2>
+                        <p class="ax-page-sub">每一次请求的完整执行记录：调用链、Token 消耗与成本</p>
+                    </div>
+                    <div class="da-observ-filters">
+                        <select v-model="filters.status" @change="reload" class="da-observ-select">
+                            <option value="">全部状态</option>
+                            <option value="completed">已完成</option>
+                            <option value="interrupted">已中断</option>
+                            <option value="error">错误</option>
+                            <option value="running">运行中</option>
+                        </select>
+                        <input v-model="filters.keyword" @keyup.enter="reload" placeholder="搜索提问 / 会话 ID / 调用 ID…"
+                               class="da-observ-input"/>
+                        <button class="da-btn da-btn-primary" @click="reload">
+                            <i class="fas fa-search"></i> 查询
+                        </button>
+                        <button class="da-btn" @click="loadCalls" title="刷新">
+                            <i class="fas fa-sync" :class="{'fa-spin': loading}"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- 调用列表 -->
+                <div class="da-observ-card">
+                    <table class="da-observ-table">
+                        <colgroup>
+                            <col class="col-sid">
+                            <col class="col-q">
+                            <col class="col-status">
+                            <col class="col-dur">
+                            <col class="col-rounds">
+                            <col class="col-tools">
+                            <col class="col-ptok">
+                            <col class="col-ctok">
+                            <col class="col-cost">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>调用 ID</th><th>提问</th><th>状态</th><th>耗时</th>
+                            <th title="与 LLM 交互的推理轮数（一次轮次可并行调用多个工具）">LLM 轮次</th>
+                            <th>工具</th><th>输入 tok</th><th>输出 tok</th>
+                            <th>成本(元)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-if="loading && calls.length === 0">
+                            <td colspan="9" class="da-observ-empty"><i class="fas fa-spinner fa-spin"></i> 加载中…</td>
+                        </tr>
+                        <tr v-else-if="calls.length === 0">
+                            <td colspan="9" class="da-observ-empty">暂无调用记录，去聊天页发起一次对话吧</td>
+                        </tr>
+                        <tr v-else v-for="c in calls" :key="c.sessionId" class="da-observ-row" @click="openDetail(c)">
+                            <td class="da-observ-sid">
+                                <span class="da-id-chip" :title="c.sessionId">{{ c.sessionId || '-' }}</span>
+                                <button class="da-id-copy" @click.stop="copyText(c.sessionId)" title="复制"><i class="fas fa-copy"></i></button>
+                            </td>
+                            <td class="da-observ-q">{{ c.questionExcerpt || '-' }}</td>
+                            <td><span :class="statusClass(c.status)">{{ statusLabel(c.status) }}</span></td>
+                            <td class="mono">{{ fmtDuration(c.durationMs) }}</td>
+                            <td class="mono">{{ c.rounds ?? '-' }}</td>
+                            <td class="mono">{{ c.toolCalls ?? 0 }}<span v-if="c.toolFailures > 0" class="da-observ-warn"> / {{ c.toolFailures }}</span></td>
+                            <td class="mono">{{ fmtNum(c.promptTokens) }}</td>
+                            <td class="mono">{{ fmtNum(c.completionTokens) }}</td>
+                            <td class="mono">{{ c.cost != null ? c.cost : '-' }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="da-observ-pager">
+                        <span class="mono">共 {{ total }} 条</span>
+                        <select v-model.number="size" @change="reload" class="da-observ-select" title="每页条数">
+                            <option :value="10">10 条/页</option>
+                            <option :value="20">20 条/页</option>
+                            <option :value="50">50 条/页</option>
+                            <option :value="100">100 条/页</option>
+                        </select>
+                        <button class="da-btn" :disabled="page <= 1" @click="page--; loadCalls()">上一页</button>
+                        <span class="mono">{{ page }} / {{ totalPages }}</span>
+                        <button class="da-btn" :disabled="page >= totalPages" @click="page++; loadCalls()">下一页</button>
+                    </div>
+                </div>
+        </main>
+
+        <!-- 调用详情抽屉 -->
+        <div class="da-drawer-mask" v-if="detailOpen" @click.self="closeDetail"></div>
+        <div class="da-drawer" :class="{ open: detailOpen }">
+            <div class="da-drawer-head">
+                <div class="da-drawer-tabs">
+                    <button :class="{ active: detailTab === 'stats' }" @click="detailTab = 'stats'">统计</button>
+                    <button :class="{ active: detailTab === 'trace' }" @click="detailTab = 'trace'">轨迹</button>
+                </div>
+            </div>
+
+            <div class="da-drawer-body" v-if="detailOpen">
+                <!-- 统计页签 -->
+                <div v-if="detailTab === 'stats' && stats">
+                    <div class="da-basic-info" v-if="stats.call">
+                        <div class="da-basic-head">
+                            <h4>基本信息</h4>
+                            <span class="da-id-tip-wrap">
+                                <button class="da-id-tip-btn" @click.stop="showIdTip = !showIdTip" title="ID 说明"><i class="fas fa-circle-question"></i></button>
+                                <div class="da-id-tip" v-if="showIdTip">
+                                    <p><b>用户 ID</b>：当前登录用户的唯一标识（userId），在 Opik 里按 opik.metadata.userId 筛选自己的链路。</p>
+                                    <p><b>调用 ID</b>：本次任务执行的唯一标识（sessionId）。一次任务可能包含多轮推理和多次工具调用，但只对应一个调用 ID。</p>
+                                    <p><b>会话 ID</b>：对话窗口的唯一标识（conversationId）。一个会话窗口内可以连续发起多次任务请求，因此一个会话 ID 通常对应多条调用 ID。</p>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="da-basic-byline">
+                            <span :class="statusClass(stats.call.status)">{{ statusLabel(stats.call.status) }}</span>
+                            <span class="da-basic-dot">·</span>
+                            <span class="da-basic-time"><i class="far fa-clock"></i>{{ fmtTime(stats.call.createdAt) }}</span>
+                        </div>
+                        <p class="da-basic-q" :title="stats.call.questionExcerpt">{{ stats.call.questionExcerpt || '-' }}</p>
+                        <div class="da-basic-ids">
+                            <div class="da-id-row">
+                                <span class="da-basic-label">用户 ID</span>
+                                <span class="mono da-basic-id">{{ stats.call.userId || '-' }}</span>
+                                <button class="da-id-copy" @click="copyText(stats.call.userId)" title="复制"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <div class="da-id-row">
+                                <span class="da-basic-label">调用 ID</span>
+                                <span class="mono da-basic-id">{{ stats.call.sessionId || '-' }}</span>
+                                <button class="da-id-copy" @click="copyText(stats.call.sessionId)" title="复制"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <div class="da-id-row">
+                                <span class="da-basic-label">会话 ID</span>
+                                <span class="mono da-basic-id">{{ stats.call.conversationId || '-' }}</span>
+                                <button class="da-id-copy" @click="copyText(stats.call.conversationId)" title="复制"><i class="fas fa-copy"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="da-metric-grid">
+                        <div class="da-metric"><span class="lbl">总耗时</span><span class="val mono">{{ fmtDuration(trace?.totalDurationMs) }}</span></div>
+                        <div class="da-metric"><span class="lbl">LLM 轮次</span><span class="val mono">{{ trace?.llmRounds ?? '-' }}</span></div>
+                        <div class="da-metric"><span class="lbl">工具调用</span><span class="val mono">{{ trace?.toolCalls ?? '-' }}</span></div>
+                        <div class="da-metric"><span class="lbl">总 Token</span><span class="val mono">{{ fmtNum(stats.totalTokens) }}</span></div>
+                        <div class="da-metric"><span class="lbl">成本（元）</span><span class="val mono">{{ stats.call?.cost ?? '-' }}</span></div>
+                    </div>
+
+                    <div class="da-chart-grid">
+                        <div class="da-chart-card">
+                            <h4>上下文峰值占用</h4>
+                            <div id="chart-context" class="da-chart" style="height:170px;"></div>
+                        </div>
+                        <div class="da-chart-card">
+                            <h4>Token 分布</h4>
+                            <div id="chart-token" class="da-chart" style="height:170px;"></div>
+                        </div>
+                        <div class="da-chart-card">
+                            <h4>消息分布</h4>
+                            <div id="chart-msg" class="da-chart" style="height:170px;"></div>
+                        </div>
+                        <div class="da-chart-card">
+                            <h4>耗时分布</h4>
+                            <div id="chart-duration" class="da-chart" style="height:170px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="da-sec da-sec-gap">
+                        <h4>上下文占比</h4>
+                        <div class="da-bar-list">
+                            <div class="da-bar-item">
+                                <span class="da-bar-label">系统</span>
+                                <div class="da-bar-track"><div class="da-bar-fill c-slate" :style="{ width: (stats.contextBreakdown?.system || 0) + '%' }"></div></div>
+                                <span class="da-bar-val">{{ stats.contextBreakdown?.system || 0 }}%</span>
+                            </div>
+                            <div class="da-bar-item">
+                                <span class="da-bar-label">用户</span>
+                                <div class="da-bar-track"><div class="da-bar-fill c-blue" :style="{ width: (stats.contextBreakdown?.user || 0) + '%' }"></div></div>
+                                <span class="da-bar-val">{{ stats.contextBreakdown?.user || 0 }}%</span>
+                            </div>
+                            <div class="da-bar-item">
+                                <span class="da-bar-label">助手</span>
+                                <div class="da-bar-track"><div class="da-bar-fill c-green" :style="{ width: (stats.contextBreakdown?.assistant || 0) + '%' }"></div></div>
+                                <span class="da-bar-val">{{ stats.contextBreakdown?.assistant || 0 }}%</span>
+                            </div>
+                            <div class="da-bar-item">
+                                <span class="da-bar-label">工具</span>
+                                <div class="da-bar-track"><div class="da-bar-fill c-amber" :style="{ width: (stats.contextBreakdown?.tool || 0) + '%' }"></div></div>
+                                <span class="da-bar-val">{{ stats.contextBreakdown?.tool || 0 }}%</span>
+                            </div>
+                            <div class="da-bar-item">
+                                <span class="da-bar-label">工具定义</span>
+                                <div class="da-bar-track"><div class="da-bar-fill c-violet" :style="{ width: (stats.contextBreakdown?.tool_schema || 0) + '%' }"></div></div>
+                                <span class="da-bar-val">{{ stats.contextBreakdown?.tool_schema || 0 }}%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="da-sec da-sec-gap" v-if="trace && trace.promptPerRound && trace.promptPerRound.length >= 1">
+                        <h4>每轮 Prompt Token（上下文增长）</h4>
+                        <div id="chart-rounds" class="da-chart" style="height:240px;"></div>
+                    </div>
+
+                    <div class="da-sec da-sec-gap" v-if="trace && trace.toolMetrics && trace.toolMetrics.length > 0">
+                        <h4>工具调用统计</h4>
+                        <div id="chart-tools" class="da-chart" style="height:240px;"></div>
+                    </div>
+                </div>
+
+                <!-- 轨迹页签 -->
+                <div v-if="detailTab === 'trace' && trace">
+                    <div class="da-metric-grid">
+                        <div class="da-metric"><span class="lbl">对话轮次</span><span class="val mono">{{ trace.llmRounds }}</span></div>
+                        <div class="da-metric"><span class="lbl">工具调用</span><span class="val mono">{{ trace.toolCalls }}</span></div>
+                        <div class="da-metric" :class="{ danger: trace.toolFailures > 0 }">
+                            <span class="lbl">工具失败</span><span class="val mono">{{ trace.toolFailures }}</span></div>
+                        <div class="da-metric"><span class="lbl">Token 合计</span><span class="val mono">{{ fmtNum(trace.totalTokens) }}</span></div>
+                        <div class="da-metric"><span class="lbl">工具耗时</span><span class="val mono">{{ fmtDuration(trace.toolDurationMs) }}</span></div>
+                        <div class="da-metric"><span class="lbl">总时长</span><span class="val mono">{{ fmtDuration(trace.totalDurationMs) }}</span></div>
+                    </div>
+                    <div class="da-trace-toolbar">
+                        <button class="da-btn" @click="exportTraceCsv" title="导出当前调用链">
+                            <i class="fas fa-download"></i> 导出调用链
+                        </button>
+                    </div>
+
+                    <div class="da-trace-split">
+                        <!-- 左：Span 树 -->
+                        <div class="da-trace-tree">
+                            <h4>执行序列</h4>
+                            <div class="da-span-tree">
+                                <template v-for="(g, gi) in groupedSpans" :key="gi">
+                                    <template v-for="c in g.compacts" :key="c.span.id">
+                                        <div class="da-span da-span-compact" :class="{ active: selectedSpanId === c.span.id }" @click="selectSpan(c.span)">
+                                            <span class="tag compact">压缩</span>
+                                            <span class="tname">{{ c.span.toolName }}</span>
+                                            <span class="mono dur">{{ fmtDuration(c.span.durationMs) }}</span>
+                                        </div>
+                                        <div v-if="c.summary" class="da-span da-span-summary" :class="{ active: selectedSpanId === c.summary.id }" @click="selectSpan(c.summary)">
+                                            <span class="tag summary">摘要</span>
+                                            <span class="mono dur">{{ fmtDuration(c.summary.durationMs) }}</span>
+                                            <span class="mono tok">{{ c.summary.promptTokens }}→{{ c.summary.completionTokens }} tok</span>
+                                        </div>
+                                    </template>
+                                    <div v-if="g.llm" class="da-span da-span-llm" :class="{ active: selectedSpanId === g.llm?.id }" @click="selectSpan(g.llm)">
+                                        <span class="tag llm">LLM</span>
+                                        <span class="mono">Round {{ g.round }}</span>
+                                        <span class="mono dur">{{ fmtDuration(g.llm?.durationMs) }}</span>
+                                        <span class="mono st" :class="{ err: g.llm && g.llm.success === 0 }">{{ g.llm && g.llm.success === 0 ? '✗' : '✓' }}</span>
+                                    </div>
+                                    <div v-for="t in g.tools" :key="t.id" class="da-span da-span-tool" :class="{ active: selectedSpanId === t.id }" @click="selectSpan(t)">
+                                        <span class="tag tool">TOOL</span>
+                                        <span class="tname">{{ t.toolName }}</span>
+                                        <span class="mono dur">{{ fmtDuration(t.durationMs) }}</span>
+                                        <span class="mono st" :class="{ err: t.success === 0 }">{{ t.success === 0 ? '✗' : '✓' }}</span>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- 右：选中 Span 详情 -->
+                        <div class="da-trace-detail">
+                            <template v-if="spanDetail">
+                                <div class="da-span-detail-head">
+                                    <span class="tag" :class="(spanDetail.span_type || '').toLowerCase()">{{ spanTypeLabel(spanDetail.span_type) }}</span>
+                                    <span v-if="spanDetail.tool_name" class="tname">{{ spanDetail.tool_name }}</span>
+                                    <span class="mono">Round {{ spanDetail.round }}</span>
+                                    <span class="mono">{{ spanDetail.duration_ms }}ms</span>
+                                    <span v-if="spanDetail.span_type === 'LLM'" class="da-token-meta">
+                                        <span class="tok-item"><i class="fas fa-arrow-up"></i> Prompt <b class="mono">{{ fmtNum(spanDetail.prompt_tokens) }}</b></span>
+                                        <span class="tok-item"><i class="fas fa-arrow-down"></i> Completion <b class="mono">{{ fmtNum(spanDetail.completion_tokens) }}</b></span>
+                                    </span>
+                                </div>
+                                <div class="da-span-detail-body">
+                                    <div class="da-search-bar">
+                                        <i class="fas fa-search"></i>
+                                        <input v-model="jsonSearch" @input="highlightSearch" @keydown.enter.prevent="nextMatch" @keydown.esc="jsonSearch=''; highlightSearch()" placeholder="搜索入参 / 出参关键字…" class="da-search-input"/>
+                                        <span v-if="matchTotal" class="da-match-count">{{ matchIndex }} / {{ matchTotal }}</span>
+                                        <button class="da-match-btn" @click="prevMatch" title="上一个 (Shift+Enter)"><i class="fas fa-chevron-up"></i></button>
+                                        <button class="da-match-btn" @click="nextMatch" title="下一个 (Enter)"><i class="fas fa-chevron-down"></i></button>
+                                        <button v-if="jsonSearch" class="da-search-clear" @click="jsonSearch=''; highlightSearch()"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div class="da-kv-sec" v-if="spanDetail.input_data">
+                                        <div class="da-kv-head">
+                                            <h5>入参</h5>
+                                            <button class="da-copy-btn" @click="copyText(spanDetail.input_data)"><i class="fas fa-copy"></i> 复制</button>
+                                        </div>
+                                        <div id="json-input" class="da-json-view"></div>
+                                    </div>
+                                    <div class="da-kv-sec" v-if="spanDetail.think">
+                                        <div class="da-kv-head">
+                                            <h5>思考</h5>
+                                            <button class="da-copy-btn" @click="copyText(spanDetail.think)"><i class="fas fa-copy"></i> 复制</button>
+                                        </div>
+                                        <pre class="mono think">{{ spanDetail.think }}</pre>
+                                    </div>
+                                    <div class="da-kv-sec" v-if="spanDetail.output_data">
+                                        <div class="da-kv-head">
+                                            <h5>出参</h5>
+                                            <button class="da-copy-btn" @click="copyText(spanDetail.output_data)"><i class="fas fa-copy"></i> 复制</button>
+                                        </div>
+                                        <div id="json-output" class="da-json-view"></div>
+                                    </div>
+                                    <div class="da-kv-sec" v-if="spanDetail.error_message">
+                                        <div class="da-kv-head">
+                                            <h5 class="err">错误</h5>
+                                            <button class="da-copy-btn" @click="copyText(spanDetail.error_message)"><i class="fas fa-copy"></i> 复制</button>
+                                        </div>
+                                        <pre class="mono err">{{ spanDetail.error_message }}</pre>
+                                    </div>
+                                </div>
+                            </template>
+                            <div v-else class="da-trace-detail-empty">点击左侧 span 查看入参 / 出参</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/observability.js"></script>
+</body>
+</html>

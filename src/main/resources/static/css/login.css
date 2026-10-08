@@ -1,0 +1,101 @@
+/* ==================== 登录页（对齐 参考实现 auth 布局，浅色） ==================== */
+.ax-login-body { margin: 0; min-height: 100vh; background: #f7f8fb; font-family: var(--ax-font); }
+
+.ax-auth-map { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: .8; pointer-events: none; }
+
+.ax-auth-card {
+    position: relative; z-index: 1; width: min(420px, calc(100vw - 32px));
+    margin: min(12vh, 120px) auto 0; box-sizing: border-box;
+    background: var(--ax-surface); border: 1px solid var(--ax-border);
+    border-radius: 16px; box-shadow: 0 16px 40px rgba(23,26,32,.10);
+    padding: 34px 36px 26px;
+}
+
+/* logo：图标 + 产品名 */
+.ax-auth-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 24px; }
+.ax-auth-logo img { width: 38px; height: 38px; border-radius: 10px; }
+.ax-auth-logo span { font-size: 17px; font-weight: 700; letter-spacing: -.2px; color: var(--ax-text); }
+
+/* 视图标题（注册/重置） */
+.ax-auth-view-title { font-size: 17px; font-weight: 700; color: var(--ax-text); margin-bottom: 18px; }
+
+/* 页签（表单上方，胶囊式） */
+.ax-auth-tabs {
+    display: flex; gap: 4px; background: #eef0f4; border-radius: 10px;
+    padding: 4px; margin-bottom: 22px;
+}
+.ax-auth-tabs button {
+    flex: 1; padding: 9px 0; border: none; background: transparent; border-radius: 8px;
+    font-size: 14px; font-weight: 500; color: var(--ax-text-2); cursor: pointer;
+    font-family: var(--ax-font); transition: all .15s;
+}
+.ax-auth-tabs button.active {
+    background: var(--ax-surface); color: var(--ax-primary); font-weight: 600;
+    box-shadow: var(--ax-shadow);
+}
+
+/* 表单组：label + input（agentx 式） */
+.ax-form-group { margin-bottom: 16px; }
+.ax-form-label { display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 7px; }
+.ax-form-input {
+    width: 100%; box-sizing: border-box; height: 44px; padding: 0 13px;
+    border: 1px solid #cbd5e1; border-radius: 9px; background: #fff;
+    color: var(--ax-text); font-size: 14px; outline: none; font-family: var(--ax-font);
+    transition: border-color .15s, box-shadow .15s;
+}
+.ax-form-input:focus { border-color: var(--ax-primary); box-shadow: 0 0 0 3px rgba(79,110,247,.13); }
+.ax-form-input:disabled { opacity: .6; }
+.ax-form-input::placeholder { color: #94a3b8; }
+
+/* 密码可见性切换 */
+.pwd-row { position: relative; }
+.pwd-row .ax-form-input { padding-right: 44px; }
+.ax-pwd-toggle {
+    position: absolute; right: 7px; bottom: 7px; width: 30px; height: 30px;
+    border: none; background: transparent; color: var(--ax-text-3); cursor: pointer;
+    border-radius: 8px; font-size: 13px;
+}
+.ax-pwd-toggle:hover { color: var(--ax-primary); background: var(--ax-primary-soft); }
+
+/* 验证码行 */
+.ax-code-row { display: flex; gap: 10px; }
+.ax-code-row .ax-form-input { flex: 1; min-width: 0; }
+.ax-code-btn {
+    flex-shrink: 0; min-width: 108px; padding: 0 14px;
+    border: 1px solid rgba(79,110,247,.35); background: var(--ax-primary-soft);
+    color: var(--ax-primary); border-radius: 9px; font-size: 13px; font-weight: 500;
+    cursor: pointer; font-family: var(--ax-font);
+}
+.ax-code-btn:hover:not(:disabled) { background: #e2e7fd; }
+.ax-code-btn:disabled { opacity: .55; cursor: not-allowed; }
+
+/* 登录按钮 */
+.ax-login-submit {
+    width: 100%; height: 44px; margin-top: 4px; border: none;
+    background: var(--ax-primary); color: #fff; border-radius: 9px;
+    font-size: 14.5px; font-weight: 600; cursor: pointer; font-family: var(--ax-font);
+    transition: background .15s, box-shadow .15s;
+}
+.ax-login-submit:hover:not(:disabled) { background: var(--ax-primary-deep); box-shadow: 0 6px 16px rgba(79,110,247,.25); }
+.ax-login-submit:disabled { opacity: .6; cursor: not-allowed; }
+
+/* 辅助行：忘记密码 / 返回 */
+.ax-auth-aux { display: flex; justify-content: flex-end; margin-top: 12px; }
+.ax-auth-aux.center { justify-content: center; }
+.ax-auth-aux a { font-size: 12.5px; color: var(--ax-text-2); text-decoration: none; }
+.ax-auth-aux a:hover { color: var(--ax-primary); }
+
+/* 底部切换：注册引导 */
+.ax-auth-switch {
+    margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--ax-border-light);
+    text-align: center; font-size: 13px; color: var(--ax-text-3);
+}
+.ax-auth-switch a { color: var(--ax-primary); text-decoration: none; font-weight: 500; }
+.ax-auth-switch a:hover { text-decoration: underline; }
+
+/* 错误条 */
+.ax-login-error {
+    display: flex; align-items: center; gap: 7px; margin: 0 0 14px;
+    padding: 9px 12px; border-radius: 9px;
+    background: #fef2f2; border: 1px solid #fecaca; color: var(--ax-danger); font-size: 12.5px;
+}

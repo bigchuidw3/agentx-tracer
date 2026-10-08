@@ -1,0 +1,48 @@
+/* ==================== 仪表盘 ==================== */
+.da-dash-page { max-width: 1440px; margin: 0 auto; padding: 28px 32px 40px; }
+
+.da-dash-range { display: flex; gap: 6px; background: var(--bg-muted, #f1f5f9); border-radius: 999px; padding: 3px; }
+.da-range-btn {
+    border: none; background: transparent; padding: 6px 16px; border-radius: 999px;
+    cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--ax-text-2);
+}
+.da-range-btn.active { background: var(--bg-surface, #fff); color: var(--ax-primary); box-shadow: var(--ax-shadow); }
+
+/* KPI 卡片 */
+.da-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.da-kpi-card {
+    background: var(--bg-surface, #fff); border-radius: var(--ax-radius-lg);
+    box-shadow: var(--ax-shadow); padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;
+}
+.da-kpi-card .lbl { font-size: 12px; color: var(--ax-text-3); }
+.da-kpi-card .val { font-size: 22px; font-weight: 700; color: var(--ax-text); }
+
+/* 区块 */
+.da-dash-sec {
+    background: var(--bg-surface, #fff); border-radius: var(--ax-radius-lg);
+    box-shadow: var(--ax-shadow); padding: 16px 18px; margin-bottom: 16px;
+}
+.da-dash-sec h3 { font-size: 14px; margin: 0 0 12px; color: var(--ax-text); font-weight: 600; }
+.da-dash-chart { width: 100%; }
+
+/* 双列 */
+.da-dash-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.da-dash-cols .da-dash-sec { margin-bottom: 0; }
+
+/* 三列趋势 */
+.da-dash-trends { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+.da-dash-trends .da-dash-sec { margin-bottom: 0; }
+
+/* Top 榜表格 */
+.da-dash-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.da-dash-table th { text-align: left; padding: 8px 10px; color: var(--ax-text-2); font-weight: 600; border-bottom: 1px solid var(--ax-border); white-space: nowrap; }
+.da-dash-table td { padding: 8px 10px; border-bottom: 1px solid var(--ax-border-light); white-space: nowrap; }
+.da-dash-table td.q { max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.da-dash-table .empty { text-align: center; color: var(--ax-text-3); padding: 24px 0 !important; }
+.da-dash-table tr.clickable { cursor: pointer; transition: background .12s; }
+.da-dash-table tr.clickable:hover { background: var(--ax-primary-soft, #eef2ff); }
+.da-dash-table tr.clickable:hover td.q { color: var(--ax-primary); }
+
+@media (max-width: 900px) {
+    .da-dash-cols, .da-dash-trends { grid-template-columns: 1fr; }
+}

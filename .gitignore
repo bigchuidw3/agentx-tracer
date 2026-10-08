@@ -1,0 +1,19 @@
+# 编译产物
+target/
+
+# IDE 配置
+.idea/
+*.iml
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 部署包（含真实配置、基础镜像，私发同事，不进仓库）
+deploy/
+
+# 本地工作区（Agent 运行时数据）
+workspace/
+
+# 本地配置（含密钥，不提交；提交 application-example.yml 模板）
+src/main/resources/application.yml

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentX Tracer · 智能体运行时可观测平台</title>
+    <link rel="icon" href="images/agentx-logo-mark.webp">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <script src="vendor/js/vue.global.js"></script>
+    <link rel="stylesheet" href="vendor/css/all.min.css">
+</head>
+<body class="ax-welcome-body">
+    <canvas id="attackMap" aria-hidden="true"></canvas>
+
+    <div id="ax-welcome-app">
+        <nav class="ax-welcome-nav">
+            <div class="ax-welcome-brand">
+                <img src="images/agentx-logo-mark.webp" alt="AgentX"/>
+                <span>AgentX Tracer</span>
+            </div>
+        </nav>
+
+        <main class="ax-welcome-hero">
+            <h1>洞悉执行的每一个<span class="ax-grad-text">细节</span></h1>
+            <button class="ax-btn primary lg" @click="enter"><i class="fas fa-rocket"></i> 立即体验</button>
+        </main>
+
+        <div class="ax-welcome-stats">
+            <div class="ax-welcome-stat">
+                <span class="ax-welcome-stat-num">全链路</span>
+                <span class="ax-welcome-stat-label">追踪执行细节</span>
+            </div>
+            <div class="ax-welcome-stat">
+                <span class="ax-welcome-stat-num">可视化</span>
+                <span class="ax-welcome-stat-label">多维度指标统计</span>
+            </div>
+            <div class="ax-welcome-stat">
+                <span class="ax-welcome-stat-num">计量</span>
+                <span class="ax-welcome-stat-label">Token与成本计算</span>
+            </div>
+            <div class="ax-welcome-stat">
+                <span class="ax-welcome-stat-num">OTel</span>
+                <span class="ax-welcome-stat-label">标准协议无缝接入</span>
+            </div>
+        </div>
+
+        <footer class="ax-welcome-foot">1024 Hackathon © AgentX 版权所有</footer>
+    </div>
+
+    <script src="js/attack-map.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        (function () {
+            const { createApp } = Vue;
+            createApp({
+                methods: {
+                    enter() {
+                        if (window.DA && DA.getToken && DA.getToken()) {
+                            window.open('dashboard.html', '_blank');
+                        } else {
+                            window.open('login.html', '_blank');
+                        }
+                    }
+                }
+            }).mount('#ax-welcome-app');
+        })();
+    </script>
+</body>
+</html>

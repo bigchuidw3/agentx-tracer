@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仪表盘 · AgentX Tracer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="vendor/js/vue.global.js"></script>
+    <script src="vendor/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/all.min.css">
+    <script>
+        (function () {
+            document.documentElement.setAttribute('data-theme', 'light');
+        })();
+    </script>
+</head>
+<body>
+<div id="da-dashboard-app">
+    <div id="da-header-host"></div>
+
+    <main class="ax-page da-dash-page">
+        <div class="ax-page-head">
+            <div>
+                <h2><i class="fas fa-gauge-high"></i> 仪表盘</h2>
+                <p class="ax-page-sub">智能体运行全局看板：调用量、Token、成本与质量</p>
+            </div>
+            <div class="da-dash-range">
+                <button v-for="r in ranges" :key="r.days"
+                        class="da-range-btn" :class="{ active: days === r.days }"
+                        @click="switchRange(r.days)">{{ r.label }}</button>
+            </div>
+        </div>
+
+        <!-- KPI 卡片 -->
+        <div class="da-kpi-grid">
+            <div class="da-kpi-card"><span class="lbl">调用总量</span><span class="val mono">{{ fmtNum(kpi.calls) }}</span></div>
+            <div class="da-kpi-card"><span class="lbl">总 Token</span><span class="val mono">{{ fmtNum(kpi.totalTokens) }}</span></div>
+            <div class="da-kpi-card"><span class="lbl">总成本（元）</span><span class="val mono">{{ kpi.cost != null ? kpi.cost : '-' }}</span></div>
+            <div class="da-kpi-card"><span class="lbl">成功率</span><span class="val mono">{{ kpi.successRate ?? 0 }}%</span></div>
+            <div class="da-kpi-card"><span class="lbl">最大耗时</span><span class="val mono">{{ fmtDuration(kpi.maxDurationMs) }}</span></div>
+            <div class="da-kpi-card"><span class="lbl">平均轮次</span><span class="val mono">{{ kpi.avgRounds ?? 0 }}</span></div>
+        </div>
+
+        <!-- 趋势 -->
+        <div class="da-dash-trends">
+            <div class="da-dash-sec">
+                <h3>调用趋势</h3>
+                <div id="chart-trend-calls" class="da-dash-chart" style="height:260px;"></div>
+            </div>
+            <div class="da-dash-sec">
+                <h3>Token 趋势</h3>
+                <div id="chart-trend-tokens" class="da-dash-chart" style="height:260px;"></div>
+            </div>
+            <div class="da-dash-sec">
+                <h3>成功率</h3>
+                <div id="chart-trend-rate" class="da-dash-chart" style="height:260px;"></div>
+            </div>
+        </div>
+
+        <!-- 分布 -->
+        <div class="da-dash-cols">
+            <div class="da-dash-sec">
+                <h3>工具调用分布</h3>
+                <div id="chart-tools" class="da-dash-chart" style="height:320px;"></div>
+            </div>
+            <div class="da-dash-sec">
+                <h3>状态分布</h3>
+                <div id="chart-status" class="da-dash-chart" style="height:320px;"></div>
+            </div>
+        </div>
+
+        <!-- Top 榜（点击下钻到调用追踪） -->
+        <div class="da-dash-cols">
+            <div class="da-dash-sec">
+                <h3>Top 5 · Token</h3>
+                <table class="da-dash-table">
+                    <thead><tr><th>提问</th><th>Token</th></tr></thead>
+                    <tbody>
+                    <tr v-for="s in topTokens" :key="s.sessionId" class="clickable" @click="drillTo(s)">
+                        <td class="q" :title="s.question">{{ s.question || '-' }}</td>
+                        <td class="mono">{{ fmtNum(s.tokens) }}</td>
+                    </tr>
+                    <tr v-if="topTokens.length === 0"><td colspan="2" class="empty">暂无数据</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="da-dash-sec">
+                <h3>Top 5 · 耗时</h3>
+                <table class="da-dash-table">
+                    <thead><tr><th>提问</th><th>耗时</th></tr></thead>
+                    <tbody>
+                    <tr v-for="s in topDuration" :key="s.sessionId" class="clickable" @click="drillTo(s)">
+                        <td class="q" :title="s.question">{{ s.question || '-' }}</td>
+                        <td class="mono">{{ fmtDuration(s.durationMs) }}</td>
+                    </tr>
+                    <tr v-if="topDuration.length === 0"><td colspan="2" class="empty">暂无数据</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="da-dash-cols">
+            <div class="da-dash-sec">
+                <h3>Top 5 · 轮次</h3>
+                <table class="da-dash-table">
+                    <thead><tr><th>提问</th><th>LLM 轮次</th></tr></thead>
+                    <tbody>
+                    <tr v-for="s in topRounds" :key="s.sessionId" class="clickable" @click="drillTo(s)">
+                        <td class="q" :title="s.question">{{ s.question || '-' }}</td>
+                        <td class="mono">{{ s.rounds ?? 0 }}</td>
+                    </tr>
+                    <tr v-if="topRounds.length === 0"><td colspan="2" class="empty">暂无数据</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="da-dash-sec">
+                <h3>Top 5 · 工具调用</h3>
+                <table class="da-dash-table">
+                    <thead><tr><th>提问</th><th>工具调用</th></tr></thead>
+                    <tbody>
+                    <tr v-for="s in topTools" :key="s.sessionId" class="clickable" @click="drillTo(s)">
+                        <td class="q" :title="s.question">{{ s.question || '-' }}</td>
+                        <td class="mono">{{ s.toolCalls ?? 0 }}</td>
+                    </tr>
+                    <tr v-if="topTools.length === 0"><td colspan="2" class="empty">暂无数据</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

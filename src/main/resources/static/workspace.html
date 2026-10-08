@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作区 · AgentX Tracer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📁</text></svg>">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/workspace.css">
+    <script src="vendor/js/vue.global.js"></script>
+    <link rel="stylesheet" href="vendor/css/all.min.css">
+    <script>
+        (function () {
+            document.documentElement.setAttribute('data-theme', 'light');
+        })();
+    </script>
+</head>
+<body>
+<div id="da-workspace-app">
+    <div id="da-header-host"></div>
+
+    <main class="ax-page">
+        <div class="ax-page-head">
+            <div>
+                <h2><i class="fas fa-folder-tree"></i> 工作区</h2>
+                <p class="ax-page-sub">浏览 / 预览 / 下载 / 搜索你的工作区文件</p>
+            </div>
+        </div>
+
+        <div class="da-ws-card">
+            <div class="da-ws-toolbar">
+                <button class="da-btn" @click="goUp" :disabled="!path || searching" title="上一级"><i class="fas fa-arrow-up"></i> 上一级</button>
+                <div class="da-ws-breadcrumb" v-if="!searching">
+                    <a href="javascript:;" @click="goPath('')">根目录</a>
+                    <template v-for="(seg, i) in crumbs" :key="i">
+                        <span class="sep">/</span>
+                        <a v-if="i < crumbs.length - 1" href="javascript:;" @click="goPath(crumbPath(i))">{{ seg }}</a>
+                        <span v-else class="cur">{{ seg }}</span>
+                    </template>
+                </div>
+                <div class="da-ws-breadcrumb" v-else>
+                    <span class="cur">搜索「{{ keyword }}」的结果</span>
+                    <a href="javascript:;" @click="clearSearch">返回目录</a>
+                </div>
+                <div class="da-ws-search">
+                    <input class="ax-input" v-model="keyword" placeholder="搜索文件…" @keyup.enter="doSearch"/>
+                    <button class="da-btn" @click="doSearch"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="da-btn" @click="batchDownload" :disabled="selectedCount === 0" title="批量下载"><i class="fas fa-download"></i> 下载{{ selectedCount ? '(' + selectedCount + ')' : '' }}</button>
+                <button class="da-btn danger" @click="batchDelete" :disabled="selectedCount === 0" title="批量删除"><i class="fas fa-trash"></i> 删除{{ selectedCount ? '(' + selectedCount + ')' : '' }}</button>
+                <button class="da-btn danger" @click="cleanWorkspace" title="清理工作区"><i class="fas fa-eraser"></i> 清理工作区</button>
+                <button class="da-btn" @click="reload" title="刷新"><i class="fas fa-sync" :class="{'fa-spin': loading}"></i></button>
+            </div>
+
+            <table class="da-ws-table">
+                <thead>
+                <tr>
+                    <th class="chk"><input type="checkbox" :checked="allSelected" @change="toggleAll"/></th>
+                    <th>名称</th><th>大小</th><th>修改时间</th><th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-if="loading"><td colspan="5" class="empty"><i class="fas fa-spinner fa-spin"></i> 加载中…</td></tr>
+                <tr v-else-if="entries.length === 0"><td colspan="5" class="empty">{{ searching ? '没有匹配的文件' : '空目录' }}</td></tr>
+                <tr v-else v-for="e in entries" :key="e.path">
+                    <td class="chk"><input type="checkbox" :checked="isSelected(e)" @change="toggleSelect(e)"/></td>
+                    <td class="name" @click="e.isDir && !searching ? goPath(e.path) : null">
+                        <i class="fas" :class="e.isDir ? 'fa-folder' : 'fa-file'"></i>
+                        <span>{{ searching ? e.path : e.name }}</span>
+                    </td>
+                    <td class="mono">{{ e.isDir ? '-' : fmtSize(e.size) }}</td>
+                    <td class="mono">{{ fmtTime(e.modifiedAt) }}</td>
+                    <td class="ops">
+                        <button v-if="!e.isDir" class="da-btn sm" @click="preview(e)"><i class="fas fa-eye"></i> 查看</button>
+                        <button v-if="!e.isDir" class="da-btn sm" @click="download(e)"><i class="fas fa-download"></i> 下载</button>
+                        <button class="da-btn sm danger" @click="removeEntry(e)"><i class="fas fa-trash"></i> 删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- 预览对话框 -->
+    <div class="da-ws-preview-mask" v-if="previewing" @click.self="closePreview">
+        <div class="da-ws-preview-card">
+            <div class="head">
+                <span class="mono">{{ previewName }}</span>
+                <button class="da-ws-preview-close" @click="closePreview"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div class="body">
+                <img v-if="previewIsImage" :src="previewUrl" alt="预览"/>
+                <pre v-else>{{ previewText }}</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- 确认对话框 -->
+    <div class="da-confirm-mask" v-if="confirm.show" @click.self="confirmCancel">
+        <div class="da-confirm-card">
+            <h3><i class="fas" :class="confirm.danger ? 'fa-triangle-exclamation' : 'fa-circle-question'"></i> {{ confirm.title }}</h3>
+            <p>{{ confirm.message }}</p>
+            <div class="actions">
+                <button class="da-btn" @click="confirmCancel">取消</button>
+                <button class="da-btn danger" @click="confirmOk">{{ confirm.confirmText || '确定' }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/workspace.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* ==================== 模型管理 + Shell 通用页面 ==================== */
+.ax-model-card { padding: 22px 24px; }
+.ax-model-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--ax-border-light); margin-bottom: 18px; }
+.ax-model-title { display: flex; align-items: center; gap: 12px; }
+.ax-model-name { font-size: 15px; font-weight: 700; color: var(--ax-text); font-family: var(--ax-mono); }
+
+.ax-model-foot { display: flex; align-items: center; gap: 16px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--ax-border-light); }
+.ax-test-result { font-size: 13px; display: flex; align-items: center; gap: 7px; }
+.ax-test-result.ok { color: var(--ax-success); }
+.ax-test-result.err { color: var(--ax-danger); }
+
+.ax-hint-card { margin-top: 18px; padding: 18px 24px; }
+.ax-hint-title { font-size: 13.5px; font-weight: 700; color: var(--ax-text); margin-bottom: 10px; }
+.ax-hint-title i { color: var(--ax-warning); margin-right: 4px; }
+.ax-hint-list { margin: 0; padding-left: 18px; font-size: 12.5px; color: var(--ax-text-2); line-height: 2; }
+.ax-hint-list b { color: var(--ax-text); }
+

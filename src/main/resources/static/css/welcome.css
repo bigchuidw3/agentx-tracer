@@ -1,0 +1,69 @@
+/* ==================== 欢迎页（攻击地图 · 极简 Hero） ==================== */
+.ax-welcome-body { margin: 0; min-height: 100vh; background: #f7f8fb; font-family: var(--ax-font); }
+#attackMap { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: .8; pointer-events: none; }
+
+#ax-welcome-app { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* nav：logo 品牌（略大） */
+.ax-welcome-nav { padding: 22px 32px; box-sizing: border-box; }
+.ax-welcome-brand { display: flex; align-items: center; gap: 12px; }
+.ax-welcome-brand img { width: 40px; height: 40px; border-radius: 11px; }
+.ax-welcome-brand span { font-size: 17px; font-weight: 700; letter-spacing: -.2px; color: var(--ax-text); }
+
+/* Hero */
+.ax-welcome-hero {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 20px 24px; gap: 26px;
+}
+.ax-welcome-hero h1 {
+    font-size: clamp(36px, 5.4vw, 58px); font-weight: 800; line-height: 1.25;
+    letter-spacing: -1px; color: var(--ax-text); margin: 0;
+}
+
+/* 特性一览：底部横排统计栏（数字 + 标签，对齐 参考实现 样式） */
+.ax-welcome-stats {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--ax-border);
+    background: rgba(255,255,255,.82); backdrop-filter: blur(12px);
+}
+.ax-welcome-stat {
+    position: relative;
+    padding: 26px 16px;
+    text-align: center;
+}
+.ax-welcome-stat + .ax-welcome-stat::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    height: 44%; width: 1px;
+    background: var(--ax-border);
+}
+.ax-welcome-stat-num {
+    display: block;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: var(--ax-text);
+}
+.ax-welcome-stat-label {
+    display: block;
+    margin-top: 5px;
+    font-size: 12.5px;
+    color: var(--ax-text-3);
+}
+
+/* 立即体验 */
+.ax-btn.lg { padding: 13px 34px; font-size: 15px; border-radius: 12px; margin-top: 6px; }
+
+/* 底部 */
+.ax-welcome-foot { text-align: center; padding: 22px; font-size: 11.5px; color: var(--ax-text-3); letter-spacing: 1px; }
+
+@media (max-width: 640px) {
+    .ax-welcome-stats { grid-template-columns: repeat(2, 1fr); }
+    .ax-welcome-stat:nth-child(even)::before { display: none; }
+    .ax-welcome-stat { border-bottom: 1px solid var(--ax-border); }
+}

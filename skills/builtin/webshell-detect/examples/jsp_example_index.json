@@ -1,0 +1,2172 @@
+{
+  "ef99847d2ea1ee8f351cde5f211e50ff.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "293718243315ddf41ab9cafe2764e213.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "0a2662709b18f405cbe7128fc3eb3e37.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "6b69c5574903b09ccfa371b4b9043ac0.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "576331a09bdd0b927d15fcb8bbea629c.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "5f354dc22fee7846d9a943bda7caf304.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": true
+  },
+  "3d59d51eaea1fc574bdb44851e79dee9.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": true
+  },
+  "2ef7a143fedd95d1965fcba886047589.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": false
+  },
+  "ea94d1e22c4b71fdf34a002ff3b841e0.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": true
+  },
+  "2ae9ef0cbe621b77465e5e6e9a677632.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": true
+  },
+  "d61575561cca93a39c2bb61f044c7353.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "8010f0f907df58b595b1afe6ed2c9631.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "06962ebdfaf9569b5ae14f5610a81397.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "059f5593784beb11ef87013ca2fed0da.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "0ee2a0ae7a65ebd1cdcf4eeee55285de.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "70a24bcd2e75d49480215fe7717d7623.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "75dbfb21756dbe4468d011a679359367.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "e022a0ac192836c66e8fde213d5965cb.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "f75dd6e1b85e9022149a2f770a80b504.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": false
+  },
+  "10ace7072c5f9cc667ac633434baaa37.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "8ce8453cef642e8c346990f816670383.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "1623e930ba6dc7d1ac87b4c532f5a398.jsp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "b57abd3562d23ef6f2ed6f6db82c78ce.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "a51f9c452aa1c8f0f599255c4c733550.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "b55af6f49b752eb3fe59a06034c47bf8.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "de84636eefaed8a696a8640762d9c113.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "b0be43049c163446cd21870e945f219c.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "5c5cbe0f816bb0208d156814446c0921.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "b5b5db90311be38d21dd43ac5bb7be25.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "ebe4eed1-dea4-4937-bf78-b7eda8904184-u5i8zvxzj85xweck.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "79c5d2e3528a439150173cc72feb510c.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 16,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 20,
+    "has_input": true
+  },
+  "04cdf8af20985b41e18953f8eac19cea.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "569423b6ffd2d7c4f16364b88192d563.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "9b37da8865a4307dedb99b94101e8fed.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 16,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 20,
+    "has_input": true
+  },
+  "8a2739bd149924ea931d38c40ee85bb8.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 16,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 20,
+    "has_input": true
+  },
+  "64119dc8b5e906c508e178cce0077b4c.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "38af52a36f6b28e92a328cf12bae68f8.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "46bdba42e3dc1213464dc668ab29cfc9.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "811ca05135e5f2056ae1181002b90a95.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "2340b2008da37b70a62d30d3a9c4fda4234adb67cd635977da0bed6b6b19c2ef.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "1b70a015efc08bd3120afa54ee42eebf.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 3,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "a0e7357d7814f0da0f46191b248d1698.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 3,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "1b81a5efe6b9df892032de3a648b5269.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 3,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "93ddbea174967210df9533ef03c1fc66.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 3,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "cc3205c727a134525f1d5f7f8e9f9dacf16f6419.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 2,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 10,
+    "has_input": true
+  },
+  "7701e6e282c93e854ce5fcf01f93ea72.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "0e2fb34587907cf8c26282064ea54b0e.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "a7b4713b2759d2608fd1f63bec7894f0.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "2cdc6551595aec7af6f68445546c35b6.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "e62e0c4fe437002f6b5a0f80a07fd716.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "3b3edd98e2c58a2e6c32e39a010df80e.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 16,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 24,
+    "has_input": true
+  },
+  "11bdc31a9c809481b38e7a0bfb72e9d8.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 16,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 24,
+    "has_input": true
+  },
+  "7bd67899739f5fdccf0a9132f4900adc.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "30ac4d68af0671c9f856261b3aeb6f07.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "3a229274a2850fd188eace5bf8afead4.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 16,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 24,
+    "has_input": true
+  },
+  "83c0013b2e6eb0008faa14ef262d92ec.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 3,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "4a4045fd651111afda72f97a558cfebe.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "30b974254836a4c9952d4d92f64153bc.jsp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": false
+  },
+  "2ad588c3b526899442b0757620b1958e.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 3,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "c2433e50c064b465e3463954b59534f7.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 1,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "a059b439c1633bab5497fc748223face.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "5dfab64410a015aa1b601e3f0bb8ee92.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "89cc5c33e13041001a1f1b2669095d9e.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "efbb10b5a247df16f56bf0eff1e11520.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "b686eff84ee46f118c8f5bf1cab51b0b.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "a63f0c204a152b7785fd87200a4a3bd5.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "e1bff3c6419739c73481a8fa3bbe69bb.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 5,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "c246042fc699ad020833b995b8dd21de.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "2cb8d2235cf49a1ecc1608f39dda0530.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "8c0e9963198cc1409e5584e6c88f288d.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "78c5818958032afc067a9a683f07fd76.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 8,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": false
+  },
+  "689934c624288f1f3f9d059fd3ca5e6f.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "large_webshell_47-66s5hu1zvgbh768q.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 6,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "631bbd593700be82b333645415baee1a.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "01451dab6f568d4f0c76aff901f4242a.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 6,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "86a47789f5bbea495ea80f217f65e588.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "9f2583248d7ce9d8d7f38a9a91669526.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "78d33672e8b1d012bca6b8122ff480dd.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "f183c9d8c41068cd14b05ed1eeb94dac.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "a65510dfe63f4af78886840f5655ada8.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "c654a0525cea5c90f9784d0bb1865016.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 4,
+      "Network Communication": 6,
+      "Callback / Reflection": 1,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 20,
+    "has_input": true
+  },
+  "9d9026385ac9a5bfd30256ec415e8297.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 4,
+      "Network Communication": 6,
+      "Callback / Reflection": 1,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 19,
+    "has_input": true
+  },
+  "cc52af80b3d43d095a3a136cb056a2db.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 3,
+      "Network Communication": 6,
+      "Callback / Reflection": 1,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 18,
+    "has_input": true
+  },
+  "71d356edcfde02a60254ff341408195a.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 4,
+      "Network Communication": 6,
+      "Callback / Reflection": 1,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 19,
+    "has_input": true
+  },
+  "0c76db2c8d106c98a8e9ccc10116736f.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 4,
+      "Network Communication": 6,
+      "Callback / Reflection": 1,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 20,
+    "has_input": true
+  },
+  "6ea6bcb4-2354-4935-b672-da29fa042812-lowta0vd0jqacyot.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": false
+  },
+  "0e2745229d73cbc8f5b2c30f164e8567.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "9aeb12527e68614db3099978733e128c.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 5,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": false
+  },
+  "38f09f9fcec5b590b9ee21df5e4b5656.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": false
+  },
+  "ed970117fd26efb65bdab163c92d8ac8.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": false
+  },
+  "b13edba2f4603f28bdc55c465af98d2a.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "0d2122d0fda182d497861cbeb15ecfc8.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "678314d8aabe6dcc87faf980be58a7ca.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "large_webshell_54-k8gn96isbrkrukqg.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "large_webshell_43-7mhexwjqse4s3qxw.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "ebf87108c908eddaef6f30f6785d6118.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "6d788b1353ff1c30f1c7fb5fb4976156.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "700f65f438df4bc5a1e7db94159102c3.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "560c3eaf5a3f566129c5be2ebf72ac9f.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "4d96b1a20d4390bb5bb9179ff646f112.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 99,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 99,
+    "has_input": true
+  },
+  "1cd9b7d6626537f6ae7dd4f08a418015.jspx": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 1,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "23b3690fc8b7385d4e4decef091baf1b.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 1,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "1bcca40643bf28460d74a63a254268a2.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 1,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "b46891b34b069a622012fc38a7b453b9.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 1,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "c9bce5a57e67d9c3e801bc774065d4f1.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 1,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "ae4c813abffa94693cec2dc12e67d482.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 11,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "74ee08cc1243100089161b2768a1e2f0.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 11,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "5e33f893ce099109c302e350558735ae.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 11,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "45fdc1a71f7fa7e229c7821748d08c73.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 8,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "1c86e1c21cdb0af5658809503b86117e.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 11,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "321b610b04703cee9a31ff6d9113f519.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "0c8850700c1b1de90a180be51eeee4b6.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "d800975897012878592fc2a0c7bf5485.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "85c803613f9fdd5fd68044a96b1e74cb.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "594a8f4b9230f3feb4e4fd0bbcdf34af.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "large_webshell_46-ig8769cdlpj5lak1.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "large_webshell_33-g7xb4dkoqtavet93.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "638f13ee6bd26c9316702b7866000464.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "large_webshell_28-3in5pbo3mjrbsi7a.jsp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "d9559c0082ffe491d5fc4ae40280b1fd.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "c160058e94970c7869e6081ee3b56932.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "ccfc6ade0ad14b48b954c952b5f31177.jsp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "31dd52c540a5146bdeacbf399f65c288.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 3,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "731ec7b4621d929fb8646547db3d8611.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 4,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "1c7d3f04948b2ac707d8f6cb74b4bea4.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 9,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "e27f431fbb4e0d93f61f772ee4efc975.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 1,
+      "Network Communication": 4,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "217d997aa1ecaae2604c9aead520aa2a.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 1,
+      "Network Communication": 4,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "cc80fb087cc2e0dd3b4f7b6d4596d7ca.jsp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 1,
+      "Network Communication": 4,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "wsAddAllContainer.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 6,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "3bd3f1dd-8650-42d1-bd0d-4bfa02826237-0jkv7i5xs195gac0.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 6,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "b10096936d687c8fb5bfacea4b4f8a66.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "ea53ad782f8b41bf57e6e3396440d52a.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "155eba99bfdf85172a5c16115e2cd4c7.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 1,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "80538272855c1c4c4e4ebc60a7148e63.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "9800a4566c227519e003ca280ae069b7.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 3,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "ccea131b865c942f8474e697e7a4a0f6.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "f22597e47f4277e81a7dae6938f6c006.jsp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 2,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "a95ca7b5a3f3709111f9dea7891cf5ab.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "2512b9e3f56d9816926f3801a8b154b1.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "b41cf16ee9c8f60939d620264385dbbe.jsp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "274027ca9433f0d8150823b2697bc439.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "3e7e0cf189efdea6072bcd5baa8445c6.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "94d8087ee76ce57dbaab0c2fc15dd741.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "98a09225096823ed56b821cd1e19c2da.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "426b2efa2fd2ccc1ad458bca2c6e11f5.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": false
+  },
+  "1c7cfbf6d0c79cf2af5788b6b73c5cc7.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "7866733a89455c1f1a87b50838f405f3.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "2069fbc0fce68ebdb40cc9e6c1183305.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "a02fcb62872a663d2498a264b413c62f.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "10e6e2a63d377114b57b52f3191b2347.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "01a352e2547b57a7c92baea871f6b9c0.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "45c3bd2221196eaf090706a4123afc80.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 6,
+    "has_input": true
+  },
+  "1e9ed080950b36de8e387bce0bff59d3.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 0,
+    "has_input": false
+  },
+  "66d76bcf10afc9e1ac6b5c713c60dd29.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 0,
+    "has_input": false
+  },
+  "56060f4a9dc1b70186979247b3b3b95a.jsp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 0,
+    "has_input": false
+  }
+}

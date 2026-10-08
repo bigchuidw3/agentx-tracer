@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能体对话 · AgentX Tracer</title>
+    <link rel="icon" href="images/agentx-logo-mark.webp">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/shell.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <script src="vendor/js/vue.global.js"></script>
+    <link rel="stylesheet" href="vendor/css/all.min.css">
+    <!-- marked / highlight / DOMPurify（聊天消息渲染） -->
+    <script src="vendor/js/marked.min.js"></script>
+    <script src="vendor/js/highlight.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/github.min.css">
+    <script src="vendor/js/purify.min.js"></script>
+    <script>
+        (function () { document.documentElement.setAttribute('data-theme', 'light'); })();
+    </script>
+</head>
+<body>
+    <div id="da-app">
+        <!-- 全局侧边栏（导航 + 历史会话列表 #convList 由 agent-chat.js 接管渲染） -->
+        <div id="da-header-host"></div>
+
+        <!-- 主体：聊天区（自 参考实现 agent-chat 移植） -->
+        <div class="ax-chat-stage">
+            <div class="chat-body">
+                <div class="chat-content">
+                    <main class="chat-main" id="chatMain">
+                        <!-- 会话加载中 -->
+                        <div class="chat-loading" id="chatLoading" style="display:none;">
+                            <i class="fas fa-spinner fa-spin"></i> 加载会话中…
+                        </div>
+                        <!-- 空状态 -->
+                        <div class="chat-empty" id="chatEmpty">
+                            <h1 class="chat-empty-greeting" id="chatSceneGreeting">有什么可以帮你的？</h1>
+                            <p class="chat-empty-description" id="chatSceneDescription">支持文件分析、安全研判与通用问答，可结合上下文持续追问。</p>
+                            <div class="chat-suggestions" id="chatSuggestions"></div>
+                        </div>
+
+                        <!-- 消息列表 -->
+                        <div class="chat-messages" id="chatMessages"></div>
+                    </main>
+
+                    <!-- 输入区 -->
+                    <footer class="chat-footer" id="chatFooter">
+                        <!-- 已上传文件卡片 -->
+                        <div class="da-file-chips" id="fileChips" style="display:none;"></div>
+                        <div class="chat-input-wrap" id="chatInputWrap">
+                            <textarea id="chatInput" rows="1" placeholder="输入问题或待分析内容，Enter 发送，Shift+Enter 换行&#10;支持拖拽上传文件（PDF / Office / 图片，最多 3 个，每个 ≤ 100MB）"></textarea>
+                            <div class="chat-input-toolbar">
+                                <div class="chat-input-tools-left">
+                                    <button class="tool-btn" id="uploadBtn" title="上传文档（PDF / Office / 图片）">
+                                        <i class="fas fa-paperclip"></i>
+                                        <span>文档</span>
+                                    </button>
+                                    <input type="file" id="fileInput" style="display:none" multiple
+                                           accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.md,.csv,.json,.html,.htm,.xml,.rtf,.odt,.eml,.jpg,.jpeg,.png,.gif,.bmp,.webp" />
+                                </div>
+                                <button class="send-btn" id="sendBtn" title="发送">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chat-footer-hint">
+                            <i class="fas fa-circle-info"></i>
+                            <span id="chatFooterHintText">智能体也会犯错，回答仅供参考，关键信息请仔细甄别。</span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图片预览弹层 -->
+    <div class="da-image-preview" id="imagePreview" style="display:none;" onclick="this.style.display='none'">
+        <img src="" alt="预览" id="imagePreviewImg" />
+    </div>
+
+    <script src="js/common.js"></script>
+    <script>
+        // 同步渲染侧栏结构：agent-chat.js 加载时依赖 #convList，必须在其执行前完成渲染。
+        // 否则首访（未缓存用户，requireAuth 走网络）会导致 agent-chat.js 抓到 null 崩溃，
+        // 历史会话点击退化成整页跳转（慢 + 锚点错位）。
+        DA.renderHeader(document.getElementById('da-header-host'), { active: 'chat' });
+        // 异步补齐登录态/用户信息并绑定侧栏交互；鉴权兜底仍由 agent-chat.js 的 Auth.requireAuth 负责
+        (async function () {
+            const user = await DA.requireAuth();
+            if (!user) return;
+            DA.bindHeaderEvents();
+        })();
+    </script>
+    <script src="js/maas-compat.js"></script>
+    <script src="js/agent-timeline.js"></script>
+    <script src="js/agent-chat.js"></script>
+</body>
+</html>

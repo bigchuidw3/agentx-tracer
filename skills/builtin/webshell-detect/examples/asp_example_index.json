@@ -1,0 +1,3964 @@
+{
+  "eae26797a0e3b9810b347023e6f1ec2e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": false
+  },
+  "2b98fc6c962f26c278e3fbf23f5256ab.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": false
+  },
+  "0cc21e2f0ef457b77bdbccac122a98e8.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": true
+  },
+  "61e18c16afff1f026d0ab1df5dac736c.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": false
+  },
+  "577c4747c7542f74a80a9391ff572bef.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 0,
+    "has_input": false
+  },
+  "3a1bce8f97ae8273a46ce96df8102f67.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "241544b44a67713ab0ed398849629978.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "cbfddf8eb43ac41f4411441c97719c26.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "1bbc2ba5ae52dcebe661b6c553bbdc01.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "bb5a68035b6ae850d85500810f2a3bf4.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 8,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "c4544d35ea39b9f173cc203f8d1a4cc5.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "241af1c42103a26d971c521f678f3cce.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "d2328ade90649c781cf995b1e5552e74.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "956d4a1e0277c6719df97f608fd99c5d.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "0ad67b85c919476a926cf5aa5cfe4281.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "0fafbc1c9f100cd0801fb54dc1ebe5ad.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "2540a7be0b5dae7ec5e5d4141c106883.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "586d8299cedcb5f021a2a5b0ae06c97a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "5eee83e375b8d693b09d01bfd6c7e9ab.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "cc0d87e96918ad359e939e895ff37cb0.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "0fd4f0848305613acc2c44f046d31ff0.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "6283df08594b73b73b41fb2a837b8856.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "c6bedb722075cbe866e0495aff729ee3.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "6f64a34d42ae4a49d7a6d001b906c437.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 5,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "dff7c15fe71634ebabcc3de0cedd7c6b.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "fb969aebec3c9cb4168507e32d01a7b9.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "85a871524ac1df809e50b15737e4a6e8.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "06d1c4e89bb9c2303d48c2ced5466bdf.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 7,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 14,
+    "has_input": true
+  },
+  "4e1f6ea914ab362c43b06b1c0aec7af9.asp": {
+    "counts": {
+      "Code Execution": 37,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 38,
+      "Information Gathering": 17,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 95,
+    "has_input": true
+  },
+  "be0c73869374d6c3d0b33b57853d1673.asp": {
+    "counts": {
+      "Code Execution": 329,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 98,
+      "Information Gathering": 238,
+      "Network Communication": 7,
+      "Callback / Reflection": 0,
+      "File Operations": 140
+    },
+    "label": "webshell",
+    "total": 812,
+    "has_input": true
+  },
+  "a66651bd3b59a630cae8c0f781246124.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 10,
+    "has_input": false
+  },
+  "8885cd3cd0aac7af4b24d6ef69a44493.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 10,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 6
+    },
+    "label": "webshell",
+    "total": 24,
+    "has_input": true
+  },
+  "453917d86187d49dd6f6e9d8b65966fe.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 10,
+    "has_input": true
+  },
+  "6cd40afe579054c3efe891c5c310666b.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 10,
+    "has_input": true
+  },
+  "a6053b01dc3d0e2e463794d74a62d29a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 10,
+    "has_input": false
+  },
+  "30507872e2a622c04feb1264c448c7d7.asp": {
+    "counts": {
+      "Code Execution": 83,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 39,
+      "Information Gathering": 24,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 146,
+    "has_input": true
+  },
+  "281f0a6ce1f384b4c60322c3f40e172b.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "b2bf471ad5a39e46ace665f08050bb7e.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 5,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "28a498a8247ec1787840352356cbb8f6.asp": {
+    "counts": {
+      "Code Execution": 13,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 76,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 93,
+    "has_input": true
+  },
+  "adf6bca1258d4e76d009af150f9b6e40.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 5,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "d64ec82e05702e1c32ec467dcbdfbd2a.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 22,
+      "Information Gathering": 44,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 75,
+    "has_input": true
+  },
+  "435d02d9c8163861330877e9f692d2ea.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 10,
+      "Information Gathering": 25,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 42,
+    "has_input": true
+  },
+  "81ee967650282e06b4014ada20c33651.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 5,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 5
+    },
+    "label": "webshell",
+    "total": 16,
+    "has_input": true
+  },
+  "35ad6abbd21b7d61d2ea8df390668c74.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 14,
+      "Information Gathering": 8,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 30,
+    "has_input": true
+  },
+  "c114186045e46e562a76077f44bd4600.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 6,
+      "Information Gathering": 9,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 17,
+    "has_input": true
+  },
+  "07a639585281626d0863694a70d7df55.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "a6fdc17e6de773943f09fdb56edada91.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "bbd3116bec11d2ddd76d8a30190a6735.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "32b8a21cff236a9c2303c06edf86a742.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": false
+  },
+  "825d27959c2d572e6d648678098630da.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "1683cc388f705a70122b6d5c032f1968.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "e13b5134315f9d502809dfef634e6ffa.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "65e3c3ab3e8176f9d361cc2bc0aa62f7.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "fbe16b814d1cc2b2bedec05aadc9ca35.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "f915645ffbe2e6bea4dc45847872ff93.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 5,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "85939725194dd74fd415a2e8343f2ba5.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 5,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "e7d912367b1a0e54ff2129b8f8ebd1fc.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "54d57c12b995ffae4ad1ce927d85177b.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "2877af5c2978002c30a9ffba5eb7e5e4.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 11,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 17,
+    "has_input": false
+  },
+  "174c3214a5a1648237c87157c54b95f4.asp": {
+    "counts": {
+      "Code Execution": 8,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 16,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 24,
+    "has_input": false
+  },
+  "59180ec23cc9b6b9c0d81b0de4826eda.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 69,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 72,
+    "has_input": true
+  },
+  "6945157dd77c3d52a2bd92c01e61f582.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 9,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "20e550a17432f856fcac73dd6b703f54.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 220,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 221,
+    "has_input": true
+  },
+  "2af1727c1f5ca5fda8fc6b8ced58c312.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 253,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 254,
+    "has_input": true
+  },
+  "8781cd5138324667a5a3d11d230384ae.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 69,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 72,
+    "has_input": true
+  },
+  "7723da912019f4d0b0e1750ddec285a9.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "c35da9810a21a4627a5790e290a65a32.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 6,
+      "Information Gathering": 33,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 4
+    },
+    "label": "webshell",
+    "total": 43,
+    "has_input": true
+  },
+  "97ff881e00622df0a1a70d791bddd62f.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 28,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 20
+    },
+    "label": "webshell",
+    "total": 51,
+    "has_input": true
+  },
+  "3858dacba4fad0840f7a2748c572ddac.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 112,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 119,
+    "has_input": false
+  },
+  "9a1ae8e07217621755d8d87540057038.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 6,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 11
+    },
+    "label": "webshell",
+    "total": 23,
+    "has_input": true
+  },
+  "b357eda31b94c6880bf82ee4203a542e.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 10,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 19,
+    "has_input": true
+  },
+  "62237ad5d0390cac67bd401b50c0b9c4.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 10,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 19,
+    "has_input": true
+  },
+  "9251778a3ec163a55bd5e9f292392001.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 8,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 15,
+    "has_input": true
+  },
+  "16b8a3640104f34033fe987c4488812c.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 10,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 19,
+    "has_input": true
+  },
+  "53b78748161d24e4be409c9a7067fc68.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "974e52cceb100d5877a3d0c9c6979f6a.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": false
+  },
+  "c979c9ce7d36c9da0dcfd2add26968e6.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 10,
+    "has_input": true
+  },
+  "3a1fa5f343f8941e3fcd237258647a53.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 6
+    },
+    "label": "webshell",
+    "total": 13,
+    "has_input": true
+  },
+  "2eb0a7fe872bfa599ae82a64fa04ce13.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "7f9a26f96d5c94a371d8382eb6f560a4.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "ac7390dccec244cfbc34deaa461b1087.asp": {
+    "counts": {
+      "Code Execution": 108,
+      "Program Execution": 18,
+      "Obfuscation & Encryption": 135,
+      "Information Gathering": 297,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 75
+    },
+    "label": "webshell",
+    "total": 633,
+    "has_input": true
+  },
+  "6f16bbfe7f23ffcf3222320b44d2075f.asp": {
+    "counts": {
+      "Code Execution": 10,
+      "Program Execution": 6,
+      "Obfuscation & Encryption": 22,
+      "Information Gathering": 46,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 22
+    },
+    "label": "webshell",
+    "total": 106,
+    "has_input": true
+  },
+  "eaa97002e323256f334da0129cb76f66.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 19,
+      "Information Gathering": 13,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 10
+    },
+    "label": "webshell",
+    "total": 46,
+    "has_input": true
+  },
+  "fc671a41c9b68a31e49f6eb962107e66.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 11,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 27,
+    "has_input": true
+  },
+  "d9e1d9f693ecb3157bf90cf0430df477.asp": {
+    "counts": {
+      "Code Execution": 33,
+      "Program Execution": 20,
+      "Obfuscation & Encryption": 7,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 65,
+    "has_input": false
+  },
+  "5f74f39b9fbb2fed676964134cb39254.asp": {
+    "counts": {
+      "Code Execution": 17,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 51,
+      "Information Gathering": 20,
+      "Network Communication": 4,
+      "Callback / Reflection": 0,
+      "File Operations": 21
+    },
+    "label": "webshell",
+    "total": 114,
+    "has_input": true
+  },
+  "819a63234d319f95af6be6b0b1d280c7.asp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 11,
+      "Obfuscation & Encryption": 58,
+      "Information Gathering": 37,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 18
+    },
+    "label": "webshell",
+    "total": 131,
+    "has_input": true
+  },
+  "28f115447615085edbe62e60a9d22332.asp": {
+    "counts": {
+      "Code Execution": 30,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 20,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 10
+    },
+    "label": "webshell",
+    "total": 64,
+    "has_input": true
+  },
+  "26962e97c3b94f4ea8c062d781c09b0f.asp": {
+    "counts": {
+      "Code Execution": 9,
+      "Program Execution": 8,
+      "Obfuscation & Encryption": 61,
+      "Information Gathering": 37,
+      "Network Communication": 4,
+      "Callback / Reflection": 0,
+      "File Operations": 19
+    },
+    "label": "webshell",
+    "total": 138,
+    "has_input": true
+  },
+  "8f88e309190e8bb41b538f90e6f0c8dc.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 25,
+      "Network Communication": 17,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 47,
+    "has_input": true
+  },
+  "85ab4d003f4f627276268d428711583b.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "2d72036aee375b4c25c54c5d8f886a17.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "6907299dec40e7433fba6e6fb9dbabb4.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "9db7e685022cf55a8e91920ffca9aade.asp": {
+    "counts": {
+      "Code Execution": 11,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 14,
+    "has_input": true
+  },
+  "fd8fff3bcdb56f7bc6d3ef2c34015d47.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "3a7c026ff3c7fa7d834bb8982eec366a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "ff7a2d953d62afa22b8e03e10f9154aa.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": false
+  },
+  "82a6a1362eb0490c36ad97857802e3bf.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "60c04f3b3d6807c4f39ca6cadd554f31.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "1e937971cc987fbb64653b20d8888bc2.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "7686847af8e00924b1920d9d2a4520ed.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2148,
+      "Obfuscation & Encryption": 537,
+      "Information Gathering": 5907,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1611
+    },
+    "label": "webshell",
+    "total": 10203,
+    "has_input": true
+  },
+  "47b39e3960361b6f667726c8cc4b8f13.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 11,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 19,
+    "has_input": true
+  },
+  "5eec17534884af544fa08f05e3d81cce.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 9,
+    "has_input": true
+  },
+  "ffbf567327cf66dd5534a2e3212243fe.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 9,
+      "Information Gathering": 62,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 22
+    },
+    "label": "webshell",
+    "total": 97,
+    "has_input": true
+  },
+  "c6844a13cc4e523afc1aad2941afbd5a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 7,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "b3832fcbe6f2d3e26c372e490182e24c.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "ae323d7e3e09965f7d2cebe580b0df8a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "712f6e8f5f60dce1f489769bcee49b13.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": false
+  },
+  "409ffafd037342a67e9eceb26096602a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": false
+  },
+  "79069c2967aee6bb041f0dc6497b1cc6.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "c9526dd37393779c14761c49df308bbe.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "215ffd59c860c99bdcdc95517a2d6867.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "1ef1fc8c776464a5b4fe4022b1386266.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "90c0f7cba0c9860c4c8cc1036a9c088a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 9,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "f6fbb5821d45c59927998b9568b1bfbc.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "612b448911d027f0fe942dc995da0969.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "674ef7f088f50dee4aa3fe385f5a6ca5.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 3,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "bc8e867d550a089b9762ffe710d86ae6.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "a545f281ef8a2c8571ce150a2819f1b3.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "70ce41c17329061c77c4e4e701b0df83.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "3ddfc1e3ee672125e62ba4d84b24d09c.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "8c2e14c4401f810bdcd70acddd1ac171.asp": {
+    "counts": {
+      "Code Execution": 10,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 11,
+    "has_input": true
+  },
+  "ca22eac71d2e55330c81965ae9fb9a4b.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "b517b227c7c624b5f0bc2becd5980f4c.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "a61653c5be6f51bac0272d63d33ac5c2.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "8bba4b2212d98499a931ba183e0350ef.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": false
+  },
+  "66280d802a4537355e67fac673d7ccf5.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "fee5d663afa78b68d524633051a7a3fc.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "0c6f9d39310e04a1620c52a2a43710f6.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 1,
+    "has_input": true
+  },
+  "a34c5ed02bd70ba7b2523b6633bf49ba.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "157d270d80a8dee92677061d116677d1.asp": {
+    "counts": {
+      "Code Execution": 17,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 18,
+    "has_input": false
+  },
+  "2e536fe345930f32a2b6bf91ab2cbd73.asp": {
+    "counts": {
+      "Code Execution": 40,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 41,
+    "has_input": true
+  },
+  "795d19a46b9b15c29cddbb453721309e.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "4d782cfa730684aced966306bf973b6c.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "179c7f09bb36935648af415d5ea0515b99b1b1c8fe45b7390a84ae0f42553c81.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "00d57aac527750f226e5e8852090d925.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "6d8e4afb0915c6bb8eec3fffa4f946c2.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 6,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 8,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 14,
+    "has_input": true
+  },
+  "243889cfbbf64996e0ba45bac13b1d42.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "e18b5c58334788ac2d95b09bf5f694ce.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "85bb6902b7c8c1289e1b3835198d8e26.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": false
+  },
+  "0ed59ae01b28d89b3b9f7d6ca4c551f7.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "2befef6fd9e86a992c0feaaeecc51908.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": false
+  },
+  "3127224bbb0bbf24a0fd59ab296c9aaa.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 9,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 13,
+    "has_input": false
+  },
+  "43b25a4e4bda0301cec80184af1f029e.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": true
+  },
+  "12d7ce5fcbc972dd4f7abc60e5a31ca8.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "e90ad09e6dafd34af2aab82e5a708069.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 15,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 22,
+    "has_input": true
+  },
+  "ce6f317c94f5d395b7d525805ad42afc.asp": {
+    "counts": {
+      "Code Execution": 15,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 20,
+    "has_input": true
+  },
+  "4ee9cc3a4975eeae43eba6ded14ce501.asp": {
+    "counts": {
+      "Code Execution": 25,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 8,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 5
+    },
+    "label": "webshell",
+    "total": 40,
+    "has_input": true
+  },
+  "ee5cdc3ee8a6b6e15c2d7335a38fe29b.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 4
+    },
+    "label": "webshell",
+    "total": 13,
+    "has_input": true
+  },
+  "efef91c0fd584886e3f322732cb55866.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 11,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 5
+    },
+    "label": "webshell",
+    "total": 19,
+    "has_input": true
+  },
+  "15e2b5f655cfef86dc66a2d18973f4e7.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "82b69b21550ca798848a3fd9e03ecb35.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "6310653d87c08b4acbdd4f7fda222b8e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "ec9198e946336281b6d32c1cb56c8b35.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "65d8be9ee551f25d9689f3447fd78b4a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 47,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 50,
+    "has_input": false
+  },
+  "f07fd94e36282c55d6b230d6116d8726.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "befa58d6d95ce9e8ff1a97ac75c5f27a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 7,
+    "has_input": true
+  },
+  "eae16510a642147dff3ceb21b97bab3a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 47,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 50,
+    "has_input": false
+  },
+  "0f3e02f13bcf7c67e5f84367db2ae64e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "765daad4500b4c40501d8ea50d0a13889bee9484207acc56d53248b5ad56988c.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "22194f8c44524f80254e1b5aec67b03e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "f5b02a4ded9e1b7769a61d52d22c9f8d.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "94f039ecba14a338f905aeb33957ae8a.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": true
+  },
+  "ad3249325fc0306b0076026ec210e163.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "0860aa31a8b3b2aace37dd59c34487b2.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 5,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 6,
+    "has_input": true
+  },
+  "05d23d3652a24f2fae5cadf3727e3d23.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": true
+  },
+  "315c3a0cb368fda6e71770d3e4a015e9.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "57c828bea09decd3e8a989e0b1954722.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "webshell",
+    "total": 3,
+    "has_input": false
+  },
+  "d7a9be15e0c3b9ccfb02f3f8733a8f7e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 13,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 12
+    },
+    "label": "webshell",
+    "total": 28,
+    "has_input": true
+  },
+  "4487e8e8be263812bc60dd33d77104a0.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 13,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 6
+    },
+    "label": "webshell",
+    "total": 22,
+    "has_input": true
+  },
+  "046f15ab5ca2c35bd719fe00fa940876.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "1bc3d835ffdfa70d39066c79d780d49e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 6,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 8,
+    "has_input": false
+  },
+  "4cf5b82c350ab8e5c7fc3889055ffa45.asp": {
+    "counts": {
+      "Code Execution": 15,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 27,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 45,
+    "has_input": true
+  },
+  "640da11e247a462c0912d3105e586bac.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 4,
+    "has_input": true
+  },
+  "7c0b22f7702d00f175250960580d084e.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 9,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 12,
+    "has_input": true
+  },
+  "7f082165598e87cdabffcde72e861a67.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 10,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 15,
+    "has_input": true
+  },
+  "8106f1f5b9508008bc8eca985b52984e.asp": {
+    "counts": {
+      "Code Execution": 23,
+      "Program Execution": 24,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 49,
+    "has_input": false
+  },
+  "9b8270632b47c43d7b274055fbb31ea9.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 5,
+    "has_input": true
+  },
+  "cdd0f13ff01231534248d2ca0b1c5b52.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 9,
+      "Obfuscation & Encryption": 6,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 5
+    },
+    "label": "webshell",
+    "total": 25,
+    "has_input": true
+  },
+  "fd5254d404b2657d184749029456eab9.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "webshell",
+    "total": 2,
+    "has_input": false
+  },
+  "39219ee8d4297189a3dad44af9c06074.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": false
+  },
+  "31b751b6234369eb93708c5ef889ffbd.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 3,
+    "has_input": true
+  },
+  "097fcbd8aee9587f6f7fd48eca79c5c5.asp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "6e3431594565ac852b591506d32fbe69.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "03d0dc389eab5d91a562b6ec27e3c5df.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "45e085cde76e7cf7d6d667b2cfbf0b63.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "96e8a955e551ade679e0d8cf16ebb445.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "2e002598b014dd46b07bc6ca7bdebf6a.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "008ae0bd641e044017b9ac44eaa84c19.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "0cfcab1bdeb9e2b86792476492c498d6.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "0a7a76838417b039f6c8422c431c7b09.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "494bce512f4a009a5d79595f8299e697.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 3,
+    "has_input": false
+  },
+  "063cc09ed899210d53ebcf7379512c7a.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "034622a1a3d9f01bd651fd0fd2a178d9.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 3,
+    "has_input": true
+  },
+  "33ed8f0f739a8e89b63c2c463bd3cf08.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "0a391f875c04a926efe3c9dcb279b50e.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "9ab5b0e0da60e0ddf622f4bd5fe0d639.asp": {
+    "counts": {
+      "Code Execution": 6,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 9,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 15,
+    "has_input": false
+  },
+  "3aeb3b0770bffd84853f60dea5fd27b3.asp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 11,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 15,
+    "has_input": false
+  },
+  "4a8c3818d4ef8dfbdbd3275a5497254b.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": false
+  },
+  "897de97f904b4b8b7e1cb7c5b2bbcdba.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 8,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 4
+    },
+    "label": "benign",
+    "total": 14,
+    "has_input": true
+  },
+  "268e8e5ed161debe94a2d8b8fc731de2.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 18,
+      "Information Gathering": 12,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 32,
+    "has_input": true
+  },
+  "8a43c6a7bf824ae59b8b702394fcb2d5.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 3,
+    "has_input": true
+  },
+  "12a46cb2f9c3f1fa8b133bdf3d19e5a2.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 6,
+    "has_input": true
+  },
+  "a4f990780a51cc0727ee4c5add39d71e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "753d56bb41d01b86d28a3927b4f46f67.asp": {
+    "counts": {
+      "Code Execution": 12,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 19,
+    "has_input": true
+  },
+  "63c1ad81a5b36d27e8c34536f19a0e91.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 10,
+    "has_input": true
+  },
+  "2bdc4496bf3fb2650ce5e3742642d463.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 8,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "benign",
+    "total": 13,
+    "has_input": true
+  },
+  "a4fd238ea785dc01ce9adcaf4e6e2d38.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "51ff975927743c7ce57acb178c5576f7.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 6,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 10,
+    "has_input": true
+  },
+  "b458cccec9bf432d2bd878f92f6736f3.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 6,
+    "has_input": true
+  },
+  "2e7fe512583b22439c70ad8eb4a1ae85.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": false
+  },
+  "0c200549f1883821ae94d4ef0154f4e9.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 14,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 14,
+    "has_input": false
+  },
+  "04d22bbf20de24312347fb8bbe6c584d.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 6,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 6,
+    "has_input": false
+  },
+  "1bd98530a3ae39bb76ec1923d06e7f34.asp": {
+    "counts": {
+      "Code Execution": 12,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 15,
+    "has_input": true
+  },
+  "91ef06b3d3b1db46a3cc5169410f4890.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 6,
+    "has_input": true
+  },
+  "6b994e4a79778df751c605ed0d7620d9.asp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 5,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 11,
+    "has_input": true
+  },
+  "9eb032ac2be353213553ce33a26896ee.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": false
+  },
+  "84548fbf533e86df4bc45b19649d2c65.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": false
+  },
+  "a2225c9c75f0fb8a01a1cb5e1625b8a7.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "0df1e52fae18b070bd4c0bcc05d39267.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "1683390ef38e20f0c8655d6d9ac8481d.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "6e9ac825e9d68f87450ace05983eda18.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 3,
+    "has_input": false
+  },
+  "54da53be3565450e8e5b40bf816b9551.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 10,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 14,
+    "has_input": true
+  },
+  "15cd1dc9976d7156cb1fcbd2fa1348e8.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 10,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 14,
+    "has_input": true
+  },
+  "3dbc988f2e15d245b16161b511dede0f.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 2,
+      "Obfuscation & Encryption": 10,
+      "Information Gathering": 2,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 14,
+    "has_input": true
+  },
+  "3275eb334639aea892b609aed1adb941.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": false
+  },
+  "2f7029ec90ef543cc29297b2610dfefa.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 3,
+    "has_input": true
+  },
+  "6b578dbc221f75bf46c2e58c6342b8b7.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "benign",
+    "total": 6,
+    "has_input": false
+  },
+  "98a5d808e2f791281b4d355047ec321b.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "benign",
+    "total": 10,
+    "has_input": false
+  },
+  "4afb31408ef2f386620ff28f48175ae1.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 10,
+    "has_input": true
+  },
+  "807658dc0ad09bbe382b856310764453.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 3
+    },
+    "label": "benign",
+    "total": 7,
+    "has_input": false
+  },
+  "0e1c6740f0e287b4a2f2f536cdfe9f00.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "1324e8160207656a77579f960d5d791e.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "12f289de020d6c2dd890c85e5fd4ace1.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 1,
+    "has_input": true
+  },
+  "2c077d9e7a295a4c2cbbb552b83224e8.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 12,
+      "Information Gathering": 4,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 22,
+    "has_input": true
+  },
+  "0ea38174b6b17ab19e605a53aab1d914.asp": {
+    "counts": {
+      "Code Execution": 19,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 5,
+      "Information Gathering": 4,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 32,
+    "has_input": true
+  },
+  "asplite.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 19,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 6
+    },
+    "label": "benign",
+    "total": 30,
+    "has_input": true
+  },
+  "b848e1a37c97bb0f99905d7c640a66d8.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": false
+  },
+  "5780462d00d3aa3ff36f03ba498a2614.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": false
+  },
+  "3b350dcf6d7e9c73eeeec01045c9c770.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": false
+  },
+  "129485ee5f794d6671e5cd97c3ef1ab6.asp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": true
+  },
+  "b79baaf483028851a84cf1a0c6c4eada.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "167e1d419c11e21e97ca90a51169d1e6.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": false
+  },
+  "0ebeaaba042e520a12d22b14c7b50a5f.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 12,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 13,
+    "has_input": false
+  },
+  "3a34fd87adc60ea624c528b0c564611e.asp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 14,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 18,
+    "has_input": false
+  },
+  "a4b94c330d8630eee17a49aecc3c9c15.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "5b5efc1c1ea70ada14c1ce7911c7048c.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": true
+  },
+  "1d191a37c3c77947933e9a596a371546.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 27,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 29,
+    "has_input": true
+  },
+  "9a361936d9c913156c37d82b2d19b13a.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 27,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 31,
+    "has_input": true
+  },
+  "01cdb548ebb33aa4b5d149d3785e537c.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 12,
+    "has_input": false
+  },
+  "0b1462c4aa96ac821c302d57e29d179b.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 12,
+    "has_input": false
+  },
+  "6c8a138a8e5f26424ea8afaaca9e67c1.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 3,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 2
+    },
+    "label": "benign",
+    "total": 12,
+    "has_input": false
+  },
+  "049c56774dec26b2faa32de1cc2b121d.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 4,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 6
+    },
+    "label": "benign",
+    "total": 12,
+    "has_input": false
+  },
+  "5fa2fbd3f36be4a04d17e321d96fa510.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 8,
+    "has_input": true
+  },
+  "1024662c687b0991d39cb80fc5426044.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 4,
+      "Information Gathering": 2,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 8,
+    "has_input": true
+  },
+  "18c6eb6ec63d7d71fafb3113d696e6e3.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 3,
+    "has_input": true
+  },
+  "529bc67d3becec6891d47ee9130195a1.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": false
+  },
+  "022e5a7030f29a9282ebbda681b8fb95.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "7bfcc0110cb9e142af4c7d73e16836e3.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "62ca97ebb999bb99a726af5b2049bad8.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 14,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 15,
+    "has_input": false
+  },
+  "06b83e230bfe37c18964c806aa62b200.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "0816a89b9fab786b76f2585a53b6be4e.asp": {
+    "counts": {
+      "Code Execution": 17,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 3,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 23,
+    "has_input": true
+  },
+  "1374281a890d8d2b54d24a0f51849392.asp": {
+    "counts": {
+      "Code Execution": 3,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 5,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 10,
+    "has_input": false
+  },
+  "4bcd702a36bcae5618cc2d3858ca8b40.asp": {
+    "counts": {
+      "Code Execution": 4,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 12,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 19,
+    "has_input": true
+  },
+  "175218e0f8a7e48adc238d2d1bdfe021.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "a31aae651e986d9bdeb3bf65cd4c0ce1.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": false
+  },
+  "8299827cfa2b442e2af38cd7f8ce4dff.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 3,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "195f68243104a60a0b5d9f2841cfe59f.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "9ffed99d4012abdb4352827e4269fd6c.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "3332785d9596adb3f6fe4bd1e9822701.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "0426966c4db6e33bf59d6ede5f06717b.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 3,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 6,
+    "has_input": true
+  },
+  "1b0ee3f27420f7b19b709049c8b1974d.asp": {
+    "counts": {
+      "Code Execution": 2,
+      "Program Execution": 4,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 4,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 10,
+    "has_input": false
+  },
+  "0f88f303e88a20ab263cdbaf3fa71b07.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 20,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 21,
+    "has_input": true
+  },
+  "36f19c01de909de92a8ab48f4eb14a40.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 1,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": true
+  },
+  "03d5d2aaf4757fe17a15076f0a68e95a.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 2,
+      "Information Gathering": 1,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 5,
+    "has_input": false
+  },
+  "0c73f722629840f81dc750eb932ff97b.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 6,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 7,
+    "has_input": true
+  },
+  "329a3f2e340c7137caa2304cbae5961b.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 2,
+    "has_input": false
+  },
+  "3c2ce584e7ceec50530419e9bcc5b64b.asp": {
+    "counts": {
+      "Code Execution": 5,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 5,
+      "Information Gathering": 0,
+      "Network Communication": 1,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 11,
+    "has_input": false
+  },
+  "708222f6dfb5b91ce0ea5964121cfe5d.asp": {
+    "counts": {
+      "Code Execution": 1,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 2,
+      "Callback / Reflection": 0,
+      "File Operations": 1
+    },
+    "label": "benign",
+    "total": 4,
+    "has_input": true
+  },
+  "922df4974cb8aa038253ce9951c9eaa3.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 1,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 17,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 8
+    },
+    "label": "benign",
+    "total": 26,
+    "has_input": false
+  },
+  "07f6b224dfcad81d845d57ab4579d236.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 0,
+    "has_input": false
+  },
+  "105b4cb3c417a67338907d5444fc9f2c.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 0,
+    "has_input": false
+  },
+  "89fd8b3a6ab5950498dc722cbb646612.asp": {
+    "counts": {
+      "Code Execution": 0,
+      "Program Execution": 0,
+      "Obfuscation & Encryption": 0,
+      "Information Gathering": 0,
+      "Network Communication": 0,
+      "Callback / Reflection": 0,
+      "File Operations": 0
+    },
+    "label": "benign",
+    "total": 0,
+    "has_input": true
+  }
+}
