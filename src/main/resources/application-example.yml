@@ -12,7 +12,7 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/agentx_tracer?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
     username: root
-    password: your-password
+    password: your-password   # 支持 ENC() 密文存储，解密密钥经启动参数 jasypt.encryptor.password 传入
   ai:
     openai:
       api-key: your-api-key
@@ -99,7 +99,7 @@ sa-token:
   timeout: 2592000             # token 有效期（秒），30 天
   active-timeout: -1           # 临时 token 活跃频率（-1 不限制）
   is-concurrent: true          # 允许同一账号并发登录
-  is-share: true               # 多人登录同一账号时共用一个 token
+  is-share: false               # 多人登录同一账号时共用一个 token
   token-style: uuid
   is-log: false
   is-read-cookie: true

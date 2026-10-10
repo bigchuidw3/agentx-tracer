@@ -1,6 +1,7 @@
 package com.agentx.tracer.auth.service;
 
 import cn.dev33.satoken.stp.StpUtil;
+import com.agentx.tracer.auth.PasswordHasher;
 import com.agentx.tracer.auth.dto.LoginUserVO;
 import com.agentx.tracer.auth.service.impl.AuthServiceImpl;
 import com.agentx.tracer.sms.SmsCodeService;
@@ -54,7 +55,7 @@ public class SmsAuthService {
         }
         SysUser user = new SysUser();
         user.setUsername(username);
-        user.setPassword(password);
+        user.setPassword(PasswordHasher.hash(password));
         user.setPhone(phone);
         user.setRealName(realName);
         user.setNickname(realName != null && !realName.isBlank() ? realName : username);
@@ -101,7 +102,7 @@ public class SmsAuthService {
         }
         SysUser update = new SysUser();
         update.setId(user.getId());
-        update.setPassword(newPassword);
+        update.setPassword(PasswordHasher.hash(newPassword));
         sysUserMapper.updateById(update);
         log.info("短信验证码重置密码成功: {}", maskPhone(phone));
     }

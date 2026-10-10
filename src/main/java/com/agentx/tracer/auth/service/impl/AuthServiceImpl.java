@@ -2,6 +2,7 @@ package com.agentx.tracer.auth.service.impl;
 
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.stp.StpUtil;
+import com.agentx.tracer.auth.PasswordHasher;
 import com.agentx.tracer.auth.dto.LoginRequest;
 import com.agentx.tracer.auth.dto.LoginUserVO;
 import com.agentx.tracer.auth.service.AuthService;
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 /**
  * 认证服务实现（单管理员账号模型）。
  *
- * <p>登录流程：查用户 → 明文校验密码 → 校验状态 → StpUtil.login → 返回 LoginUserVO。
+ * <p>登录流程：查用户 → 摘要校验密码 → 校验状态 → StpUtil.login → 返回 LoginUserVO。
  * 平台不开放注册，账号由 init.sql 种子初始化（默认 admin）。
  */
 @Slf4j
@@ -44,8 +45,8 @@ public class AuthServiceImpl implements AuthService {
             throw new IllegalArgumentException("用户名不存在");
         }
 
-        // 2. 校验密码（明文，种子账号）
-        if (!request.getPassword().equals(user.getPassword())) {
+        // 2. 校验密码（SHA-256 摘要，见 PasswordHasher）
+        if (!PasswordHasher.matches(request.getPassword(), user.getPassword())) {
             throw new IllegalArgumentException("密码错误");
         }
 
@@ -112,12 +113,12 @@ public class AuthServiceImpl implements AuthService {
         if (user == null) {
             throw new IllegalStateException("用户不存在: userId=" + userId);
         }
-        if (!oldPassword.equals(user.getPassword())) {
+        if (!PasswordHasher.matches(oldPassword, user.getPassword())) {
             throw new IllegalArgumentException("旧密码错误");
         }
         SysUser update = new SysUser();
         update.setId(userId);
-        update.setPassword(newPassword);
+        update.setPassword(PasswordHasher.hash(newPassword));
         update.setUpdatedAt(LocalDateTime.now());
         sysUserMapper.updateById(update);
         log.info("用户修改密码: userId={}, username={}", userId, user.getUsername());

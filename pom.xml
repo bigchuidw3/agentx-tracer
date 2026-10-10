@@ -29,6 +29,7 @@
         <minio.version>8.5.1</minio.version>
         <commons-io.version>2.15.1</commons-io.version>
         <agentx.version>1.0.1-M2</agentx.version>
+        <jasypt.version>3.0.5</jasypt.version>
     </properties>
 
     <repositories>
@@ -102,6 +103,13 @@
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-redis-jackson</artifactId>
             <version>${sa-token.version}</version>
+        </dependency>
+
+        <!-- ==================== 配置文件加密（ENC() 属性解密，密钥经 jasypt.encryptor.password 传入） ==================== -->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

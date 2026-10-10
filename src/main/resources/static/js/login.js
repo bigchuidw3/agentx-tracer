@@ -86,9 +86,14 @@ createApp({
             }
         }
 
-        function handleAuthSuccess(data, msg) {
-            DA.setToken(data.token);
-            DA.cacheUser(data);
+        function handleAuthSuccess(resp, msg) {
+            // 业务失败时后端返回 data=null：先判空，展示后端 msg（如"密码错误"），避免原生 JS 报错
+            if (!resp || !resp.data || !resp.data.token) {
+                errorMsg.value = (resp && resp.msg) || '登录失败，请检查账号或密码';
+                return;
+            }
+            DA.setToken(resp.data.token);
+            DA.cacheUser(resp.data);
             DA.showToast(msg || '登录成功');
             setTimeout(() => { window.location.href = 'dashboard.html'; }, 300);
         }
@@ -116,7 +121,7 @@ createApp({
                         phone: phone.value.trim(), code: smsCode.value.trim()
                     });
                 }
-                handleAuthSuccess(resp.data);
+                handleAuthSuccess(resp);
             } catch (e) {
                 errorMsg.value = e.message || '登录失败，请稍后重试';
             } finally {
@@ -140,7 +145,7 @@ createApp({
                     password: password.value,
                     realName: realName.value.trim() || null
                 });
-                handleAuthSuccess(resp.data, '注册成功');
+                handleAuthSuccess(resp, '注册成功');
             } catch (e) {
                 errorMsg.value = e.message || '注册失败';
             } finally {

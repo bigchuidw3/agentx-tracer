@@ -505,6 +505,10 @@
     font-size: 13.5px; color: var(--text-secondary); line-height: 1.65;
     max-height: 240px; overflow-y: auto;
 }
+/* 流式期间的思考以纯文本增量展示（避免逐帧全量 markdown 重渲染），保留换行 */
+.da-thinking-text.streaming {
+    white-space: pre-wrap;
+}
 .da-thinking-text::-webkit-scrollbar { width: 6px; }
 .da-thinking-text::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 

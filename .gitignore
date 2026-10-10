@@ -9,6 +9,9 @@ target/
 __pycache__/
 *.pyc
 
+# Office 临时锁文件
+~$*
+
 # 部署包（含真实配置、基础镜像，私发同事，不进仓库）
 deploy/
 

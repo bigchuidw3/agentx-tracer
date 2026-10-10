@@ -397,6 +397,8 @@
   let convRenderedCount = 0;
   let convHasMore = true;
   let convLoading = false;
+  // 已有加载在飞行中又来了 reset 刷新（如停止生成后刷状态）：记下，飞行结束后补一次，避免刷新被丢
+  let convReloadQueued = false;
 
   function clearConvLoader() {
     var loader = convList.querySelector('.conv-loader');
@@ -421,7 +423,12 @@
       convHasMore = true;
       clearConvLoader();
     }
-    if (convLoading || !convHasMore) return;
+    if (convLoading) {
+      // 飞行中的请求拿到的是刷新前的旧数据（如 streaming 状态），记下补刷，防止旧状态残留
+      if (reset) convReloadQueued = true;
+      return;
+    }
+    if (!convHasMore) return;
     convLoading = true;
     try {
       const requestPage = convPage;
@@ -446,6 +453,10 @@
     } finally {
       clearConvLoader();
       convLoading = false;
+      if (convReloadQueued) {
+        convReloadQueued = false;
+        loadConversations(true);
+      }
     }
   }
 
@@ -907,7 +918,11 @@
           break;
         }
       }
-      lastThinking.innerHTML = Markdown.render(thinkingContent);
+      // 流式期间用纯文本增量展示：逐帧对全量内容做 markdown 解析再整块替换 innerHTML，
+      // 长思考时既卡、未闭合语法（代码围栏/列表/表格写一半）渲染出来又破碎跳动；
+      // 流结束（Complete）再全量重渲染统一为 markdown 终态
+      lastThinking.classList.add('streaming');
+      lastThinking.textContent = thinkingContent;
       lastThinking.scrollTop = lastThinking.scrollHeight;
     }
   }
@@ -991,6 +1006,8 @@
           last.content += content;
           if (visible) scheduleStreamRender(() => updateLastThinkingContent(aiMsg));
         } else {
+          // 正文进行中夹来的空白思考不新建卡片（部分模型会在 chunk 里夹空白字段）
+          if (last && last.type === 'text' && !content.trim()) break;
           aiMsg.timeline.push({ type: 'thinking', content });
           if (visible) {
             const newItem = renderTimelineItem(
@@ -1012,6 +1029,10 @@
           last.content += content;
           if (visible) updateLastTextContent(aiMsg);
         } else {
+          // 思考进行中部分推理模型会逐 chunk 夹发空白正文：若照常建文本项会打断
+          // 思考块合并，把思考碎成一词一卡，这里直接丢弃（对正常正文无影响——
+          // 换行等空白只会走上面 last 为 text 的合并分支）
+          if (last && last.type === 'thinking' && !content.trim()) break;
           aiMsg.timeline.push({ type: 'text', content });
           if (visible) {
             const newItem = renderTimelineItem(
@@ -1117,7 +1138,12 @@
 
       case EVENTS.COMPLETE:
         aiMsg.loading = false;
-        if (visible) { finishLoadingUI(); clearStreamRefs(); }
+        if (visible) {
+          // 流式期间思考是纯文本，结束时按 timeline 数据全量重渲染一次，与历史会话视图统一为 markdown 终态
+          renderAllMessages();
+          finishLoadingUI();
+          clearStreamRefs();
+        }
         break;
 
       case EVENTS.PAUSED:
