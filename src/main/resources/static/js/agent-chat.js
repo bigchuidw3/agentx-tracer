@@ -877,19 +877,20 @@
   }
 
   function updateLastTextContent(aiMsg) {
-    // 与思考对称：流式期间正文用增量追加纯文本，避免每个 chunk 全文 markdown 解析 + 代码高亮
-    // （长正文 O(n²) 卡顿）；流结束（Complete）再全量重渲染为 markdown 终态
+    // 正文流式实时渲染 markdown（正文通常不长，全文 markdown 解析成本可接受）；
+    // 思考保持纯文本增量，正文与思考分开处理
     if (!currentTimelineEl) return;
     const textItems = currentTimelineEl.querySelectorAll('.da-text-item');
     const lastText = textItems[textItems.length - 1];
-    if (!lastText) return;
-    const fullContent = aiMsg.timeline[aiMsg.timeline.length - 1].content;
-    const renderedLen = lastText.__renderedLen || 0;
-    if (fullContent.length > renderedLen) {
-      lastText.appendChild(document.createTextNode(fullContent.slice(renderedLen)));
-      lastText.__renderedLen = fullContent.length;
+    if (lastText) {
+      lastText.innerHTML = Markdown.render(aiMsg.timeline[aiMsg.timeline.length - 1].content);
+      if (!lastText.classList.contains('is-streaming')) {
+        lastText.classList.add('is-streaming');
+      }
+      if (typeof hljs !== 'undefined') {
+        lastText.querySelectorAll('pre code').forEach(block => { hljs.highlightElement(block); });
+      }
     }
-    lastText.classList.add('is-streaming');
   }
 
   // 思考流式更新用「增量追加」：只把新增片段 append 到末尾，既避免每个 chunk 全量重写
@@ -1033,21 +1034,12 @@
           if (last && last.type === 'thinking' && !content.trim()) break;
           aiMsg.timeline.push({ type: 'text', content });
           if (visible) {
-            // 流式期间正文用纯文本：先插入空容器，再写入首段并记录已渲染长度，后续增量追加
             const newItem = renderTimelineItem(
-              { type: 'text', content: '' },
+              { type: 'text', content },
               aiMsg.timeline.length - 1,
               aiMsg.timeline
             );
-            const el = appendTimelineItemHTML(newItem);
-            if (el) {
-              const textEl = el.querySelector('.da-text-item');
-              if (textEl) {
-                textEl.textContent = content;
-                textEl.__renderedLen = content.length;
-                textEl.classList.add('is-streaming');
-              }
-            }
+            appendTimelineItemHTML(newItem);
           }
         }
         break;
@@ -1148,22 +1140,8 @@
       case EVENTS.COMPLETE:
         aiMsg.loading = false;
         if (visible) {
-          // 流式期间思考/正文用纯文本增量渲染；结束时只把正文块转成 markdown 终态
-          // （思考本就是纯文本、工具结果流式时已是 markdown），避免超长 timeline
-          // 一次性全量 markdown 渲染卡死主线程导致页面崩溃
-          if (currentTimelineEl) {
-            const textEls = currentTimelineEl.querySelectorAll('.da-text-item');
-            const textDatas = aiMsg.timeline.filter(it => it.type === 'text');
-            textEls.forEach((el, i) => {
-              const d = textDatas[i];
-              if (d) {
-                el.innerHTML = Markdown.render(d.content);
-                if (typeof hljs !== 'undefined') {
-                  el.querySelectorAll('pre code').forEach(b => hljs.highlightElement(b));
-                }
-              }
-            });
-          }
+          // 流式期间正文已实时渲染 markdown、思考已纯文本增量渲染、工具结果流式时已是 markdown，
+          // 结束时无需全量重渲染，只收尾 loading 态
           finishLoadingUI();
           clearStreamRefs();
         }
