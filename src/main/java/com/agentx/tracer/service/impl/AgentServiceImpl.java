@@ -27,7 +27,6 @@ import com.agentx.tracer.service.SandboxConfigService;
 import com.agentx.tracer.skill.SkillManager;
 import com.agentx.tracer.tools.FileTool;
 import com.agentx.tracer.tools.TimeTool;
-import com.agentx.tracer.tools.TraceQueryTools;
 import io.micrometer.tracing.Tracer;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -80,7 +79,6 @@ public class AgentServiceImpl implements AgentService {
     private final DataSource dataSource;
     private final SkillManager skillManager;
     private final TimeTool timeTool;
-    private final TraceQueryTools traceQueryTools;
     private final FileManageService fileManageService;
     private final ChatModelProvider chatModelProvider;
     private final BudgetAlertHook budgetAlertHook;
@@ -113,7 +111,7 @@ public class AgentServiceImpl implements AgentService {
     private boolean sandboxNetworkEnabled;
 
     private ToolCallback[] alwaysOnBaseTools;
-    private ToolCallback[] deferredTools;
+    private ToolCallback[] deferredTools = new ToolCallback[0];
     private ContextPolicy contextPolicy;
     private final ToolSearchConfig toolSearchConfig =
             ToolSearchConfig.builder().maxResults(TOOL_SEARCH_MAX_RESULTS).build();
@@ -124,7 +122,6 @@ public class AgentServiceImpl implements AgentService {
     public AgentServiceImpl(DataSource dataSource,
                         SkillManager skillManager,
                         TimeTool timeTool,
-                        TraceQueryTools traceQueryTools,
                         FileManageService fileManageService,
                         ChatModelProvider chatModelProvider,
                         BudgetAlertHook budgetAlertHook,
@@ -134,7 +131,6 @@ public class AgentServiceImpl implements AgentService {
         this.dataSource = dataSource;
         this.skillManager = skillManager;
         this.timeTool = timeTool;
-        this.traceQueryTools = traceQueryTools;
         this.fileManageService = fileManageService;
         this.chatModelProvider = chatModelProvider;
         this.budgetAlertHook = budgetAlertHook;
@@ -147,7 +143,6 @@ public class AgentServiceImpl implements AgentService {
     @PostConstruct
     void init() {
         this.alwaysOnBaseTools = buildAlwaysOnBaseTools();
-        this.deferredTools = buildDeferredTools();
         this.contextPolicy = buildContextPolicy();
         this.sharedStateStore.initialize();
         log.info("[agentx-console] AgentServiceImpl 初始化完成 | 常驻={} | deferred={}",
@@ -447,14 +442,6 @@ public class AgentServiceImpl implements AgentService {
                 ToolCallbacks.from(fsTools),
                 GrepTool.create(userWorkspace, builtinSkills, userSkills)
         );
-    }
-
-    /**
-     * 延迟工具：观测查询（trace 检索）。
-     * LLM 通过 tool_search 元工具按需发现，不占常驻上下文。
-     */
-    private ToolCallback[] buildDeferredTools() {
-        return mergeTools(ToolCallbacks.from(traceQueryTools));
     }
 
     private ContextPolicy buildContextPolicy() {

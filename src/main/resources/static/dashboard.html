@@ -39,7 +39,7 @@
             <div class="da-kpi-card"><span class="lbl">调用总量</span><span class="val mono">{{ fmtNum(kpi.calls) }}</span></div>
             <div class="da-kpi-card"><span class="lbl">总 Token</span><span class="val mono">{{ fmtNum(kpi.totalTokens) }}</span></div>
             <div class="da-kpi-card"><span class="lbl">总成本（元）</span><span class="val mono">{{ kpi.cost != null ? kpi.cost : '-' }}</span></div>
-            <div class="da-kpi-card"><span class="lbl">成功率</span><span class="val mono">{{ kpi.successRate ?? 0 }}%</span></div>
+            <div class="da-kpi-card"><span class="lbl">完成率</span><span class="val mono">{{ kpi.successRate ?? 0 }}%</span></div>
             <div class="da-kpi-card"><span class="lbl">最大耗时</span><span class="val mono">{{ fmtDuration(kpi.maxDurationMs) }}</span></div>
             <div class="da-kpi-card"><span class="lbl">平均轮次</span><span class="val mono">{{ kpi.avgRounds ?? 0 }}</span></div>
         </div>
@@ -55,7 +55,7 @@
                 <div id="chart-trend-tokens" class="da-dash-chart" style="height:260px;"></div>
             </div>
             <div class="da-dash-sec">
-                <h3>成功率</h3>
+                <h3>完成率</h3>
                 <div id="chart-trend-rate" class="da-dash-chart" style="height:260px;"></div>
             </div>
         </div>

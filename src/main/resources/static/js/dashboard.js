@@ -146,7 +146,7 @@
                     xAxis: axisCategory(),
                     yAxis: { type: 'value', max: 100, axisLabel: { color: '#94a3b8', fontSize: 11, formatter: '{value}%' }, splitLine: { lineStyle: { color: '#f0f2f5' } } },
                     series: [{
-                        name: '成功率', type: 'line', smooth: true, data: trend.value.map(t => t.successRate),
+                        name: '完成率', type: 'line', smooth: true, data: trend.value.map(t => t.successRate),
                         lineStyle: { color: '#10b981', width: 2 }, itemStyle: { color: '#10b981' },
                         areaStyle: { color: 'rgba(16,185,129,0.08)' }
                     }]

@@ -20,7 +20,7 @@ AgentX Tracer 把 Agent 的每一次执行拆解为可观测的 **Span 轨迹**�
 |---|---|
 | **智能体对话** | SSE 流式输出（思考 / 正文 / 工具过程）、多工具并发、流式断点续传、任务中断与恢复、L1–L6 上下文压缩 |
 | **调用追踪** | Span 执行序列（LLM / TOOL / COMPACT）、工具度量（次数 / 失败率 / P50 / P95 / Max）、每轮 Prompt 折线、入参出参与思考内容全文 |
-| **仪表盘** | 调用量 / Token / 成本 / 成功率 KPI，小时 / 7 天 / 30 天趋势联动，分布与 TOP 榜下钻 |
+| **仪表盘** | 调用量 / Token / 成本 / 完成率 KPI，小时 / 7 天 / 30 天趋势联动，分布与 TOP 榜下钻 |
 | **Token 计量** | 按当前模型单价实时折算成本（prompt / completion 分别计价），月度预算与 80% / 100% 两级告警 |
 | **Opik 接入** | OTLP 标准协议一键导出，用户级开关、连通性测试，噪声过滤只保留 Agent 调用链 |
 | **安全沙箱** | 兄弟容器模式（非 DinD），用户级隔离，工作区快照 / 恢复 |
@@ -102,18 +102,35 @@ KPI 指标 + 调用趋势 + Top 榜，Token / 成本 / 质量一屏总览。
 
 ## 快速开始
 
+> ⚠️ **部署前必读：本项目依赖 spring-ai-agentx 框架，而该框架未发布到 Maven 公共仓库。**
+
+本项目构建于自研 [spring-ai-agentx](https://github.com/bigchuidw3/spring-ai-agentx) 框架，运行时依赖 `com.agentx.ai:spring-ai-agentx-core`。**该框架没有上传到 Maven 公共仓库**，因此有两条使用路径：
+
+**方式一：直接部署（推荐）**
+
+安装包已上传到**飞书云文档**，下载解压后即可直接部署运行，**无需编译**。完整的安装与部署步骤（基础镜像、初始化数据库、install / update 脚本）见[安装部署指南](docs/AgentX%20Tracer%20安装部署指南.docx)。
+
+**方式二：本地编译**
+
+必须**先本地编译并安装 spring-ai-agentx 框架**，否则本项目 `mvn package` 会因找不到 `spring-ai-agentx-core` 依赖而失败：
+
 ```bash
-# 1. 打包
+# 1. 拉取 spring-ai-agentx 源码，本地编译并安装到本地 Maven 仓库（框架未发布到公共仓库，只能本地编译）
+git clone https://github.com/bigchuidw3/spring-ai-agentx.git
+cd spring-ai-agentx
+mvn install -DskipTests
+
+# 2. 框架编译成功后，回到本项目打包
+cd ../agentx-tracer
 mvn -o package -DskipTests
 
-# 2. 准备本地配置
+# 3. 准备本地配置
 cp src/main/resources/application-example.yml src/main/resources/application.yml
 
-# 3. 部署并访问
+# 4. 部署并访问
 # http://<服务器IP>:8090
 ```
 
-> 完整的安装与部署步骤（基础镜像、初始化数据库、install / update 脚本）见[安装部署指南](docs/AgentX%20Tracer%20安装部署指南.docx)。
 > 本地配置不入库，`application-example.yml` 为占位符模板；部署包 `deploy/` 含真实配置，单独提供、不进仓库。
 
 ---

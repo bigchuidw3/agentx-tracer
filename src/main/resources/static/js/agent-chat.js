@@ -755,12 +755,12 @@
   }
 
   // ==================== 时间线渲染 ====================
-  function renderTimelineItems(timeline) {
+  function renderTimelineItems(timeline, plain) {
     if (!timeline || timeline.length === 0) return '';
-    return timeline.map((item, i) => renderTimelineItem(item, i, timeline)).join('');
+    return timeline.map((item, i) => renderTimelineItem(item, i, timeline, plain)).join('');
   }
 
-  function renderTimelineItem(item, idx, timeline) {
+  function renderTimelineItem(item, idx, timeline, plain) {
     switch (item.type) {
       case 'thinking':
         return `
@@ -769,7 +769,7 @@
             <div class="da-timeline-body">
               <div class="da-thinking thinking-card">
                 <div class="da-thinking-label"><i class="fas fa-brain"></i> 思考过程</div>
-                <div class="da-thinking-text markdown-body">${Markdown.render(item.content || '')}</div>
+                <div class="da-thinking-text markdown-body">${plain ? Utils.escapeHtml(item.content || '') : Markdown.render(item.content || '')}</div>
               </div>
             </div>
           </div>`;
@@ -779,7 +779,7 @@
           <div class="da-timeline-item">
             <div class="da-timeline-dot text"></div>
             <div class="da-timeline-body">
-              <div class="da-text-item markdown-body text-item">${Markdown.render(item.content || '')}</div>
+              <div class="da-text-item markdown-body text-item">${plain ? Utils.escapeHtml(item.content || '') : Markdown.render(item.content || '')}</div>
             </div>
           </div>`;
 
@@ -873,58 +873,47 @@
   function appendTimelineItemHTML(html) {
     if (!currentTimelineEl) return null;
     currentTimelineEl.insertAdjacentHTML('beforeend', html);
-    const items = currentTimelineEl.querySelectorAll('.da-timeline-item');
-    return items[items.length - 1];
-  }
-
-  // rAF 节流：流式 chunk 高频到达，每帧最多渲染一次，避免频繁全量重渲染
-  let streamRenderPending = false;
-
-  function scheduleStreamRender(fn) {
-    if (streamRenderPending) return;
-    streamRenderPending = true;
-    requestAnimationFrame(() => {
-      streamRenderPending = false;
-      fn();
-    });
+    return currentTimelineEl.lastElementChild;
   }
 
   function updateLastTextContent(aiMsg) {
-    // 找到最后一个 text timeline item 并更新其内容
+    // 与思考对称：流式期间正文用增量追加纯文本，避免每个 chunk 全文 markdown 解析 + 代码高亮
+    // （长正文 O(n²) 卡顿）；流结束（Complete）再全量重渲染为 markdown 终态
     if (!currentTimelineEl) return;
     const textItems = currentTimelineEl.querySelectorAll('.da-text-item');
     const lastText = textItems[textItems.length - 1];
-    if (lastText) {
-      lastText.innerHTML = Markdown.render(aiMsg.timeline[aiMsg.timeline.length - 1].content);
-      if (!lastText.classList.contains('is-streaming')) {
-        lastText.classList.add('is-streaming');
-      }
-      if (typeof hljs !== 'undefined') {
-        lastText.querySelectorAll('pre code').forEach(block => { hljs.highlightElement(block); });
-      }
+    if (!lastText) return;
+    const fullContent = aiMsg.timeline[aiMsg.timeline.length - 1].content;
+    const renderedLen = lastText.__renderedLen || 0;
+    if (fullContent.length > renderedLen) {
+      lastText.appendChild(document.createTextNode(fullContent.slice(renderedLen)));
+      lastText.__renderedLen = fullContent.length;
     }
+    lastText.classList.add('is-streaming');
   }
 
+  // 思考流式更新用「增量追加」：只把新增片段 append 到末尾，既避免每个 chunk 全量重写
+  // textContent（长思考 O(n²) 卡顿），也不依赖 rAF（避免主线程繁忙时 DOM 停在首片段）。
+  // 流式期间思考是纯文本，流结束（Complete）再全量重渲染为 markdown 终态。
   function updateLastThinkingContent(aiMsg) {
     if (!currentTimelineEl) return;
     const thinkingTexts = currentTimelineEl.querySelectorAll('.da-thinking-text');
     const lastThinking = thinkingTexts[thinkingTexts.length - 1];
-    if (lastThinking) {
-      // 取最后一个 thinking 块的内容（而不是 timeline 最后一项，避免 rAF 延迟后拿到 text 的内容）
-      let thinkingContent = '';
-      for (let i = aiMsg.timeline.length - 1; i >= 0; i--) {
-        if (aiMsg.timeline[i].type === 'thinking') {
-          thinkingContent = aiMsg.timeline[i].content;
-          break;
-        }
+    if (!lastThinking) return;
+    // 取最后一个 thinking 块的内容（而不是 timeline 最后一项，避免拿到 text 的内容）
+    let thinkingContent = '';
+    for (let i = aiMsg.timeline.length - 1; i >= 0; i--) {
+      if (aiMsg.timeline[i].type === 'thinking') {
+        thinkingContent = aiMsg.timeline[i].content;
+        break;
       }
-      // 流式期间用纯文本增量展示：逐帧对全量内容做 markdown 解析再整块替换 innerHTML，
-      // 长思考时既卡、未闭合语法（代码围栏/列表/表格写一半）渲染出来又破碎跳动；
-      // 流结束（Complete）再全量重渲染统一为 markdown 终态
-      lastThinking.classList.add('streaming');
-      lastThinking.textContent = thinkingContent;
-      lastThinking.scrollTop = lastThinking.scrollHeight;
     }
+    const renderedLen = lastThinking.__renderedLen || 0;
+    if (thinkingContent.length > renderedLen) {
+      lastThinking.appendChild(document.createTextNode(thinkingContent.slice(renderedLen)));
+      lastThinking.__renderedLen = thinkingContent.length;
+    }
+    lastThinking.classList.add('streaming');
   }
 
   // ==================== AgentX 事件处理（严格照抄 参考实现 processAgentxEvent） ====================
@@ -1004,18 +993,27 @@
         const last = aiMsg.timeline[aiMsg.timeline.length - 1];
         if (last && last.type === 'thinking') {
           last.content += content;
-          if (visible) scheduleStreamRender(() => updateLastThinkingContent(aiMsg));
+          if (visible) updateLastThinkingContent(aiMsg);
         } else {
           // 正文进行中夹来的空白思考不新建卡片（部分模型会在 chunk 里夹空白字段）
           if (last && last.type === 'text' && !content.trim()) break;
           aiMsg.timeline.push({ type: 'thinking', content });
           if (visible) {
+            // 流式期间思考用纯文本：先插入空容器，再写入首段并记录已渲染长度，后续增量追加
             const newItem = renderTimelineItem(
-              { type: 'thinking', content },
+              { type: 'thinking', content: '' },
               aiMsg.timeline.length - 1,
               aiMsg.timeline
             );
-            appendTimelineItemHTML(newItem);
+            const el = appendTimelineItemHTML(newItem);
+            if (el) {
+              const textEl = el.querySelector('.da-thinking-text');
+              if (textEl) {
+                textEl.textContent = content;
+                textEl.__renderedLen = content.length;
+                textEl.classList.add('streaming');
+              }
+            }
           }
         }
         break;
@@ -1035,12 +1033,21 @@
           if (last && last.type === 'thinking' && !content.trim()) break;
           aiMsg.timeline.push({ type: 'text', content });
           if (visible) {
+            // 流式期间正文用纯文本：先插入空容器，再写入首段并记录已渲染长度，后续增量追加
             const newItem = renderTimelineItem(
-              { type: 'text', content },
+              { type: 'text', content: '' },
               aiMsg.timeline.length - 1,
               aiMsg.timeline
             );
-            appendTimelineItemHTML(newItem);
+            const el = appendTimelineItemHTML(newItem);
+            if (el) {
+              const textEl = el.querySelector('.da-text-item');
+              if (textEl) {
+                textEl.textContent = content;
+                textEl.__renderedLen = content.length;
+                textEl.classList.add('is-streaming');
+              }
+            }
           }
         }
         break;
@@ -1086,7 +1093,8 @@
         );
         if (entry) {
           entry.status = 'completed';
-          entry.result = event.result || '';
+          // 只保留预览长度的结果，防止大结果（读文件/测试输出）把 timeline 撑爆内存；渲染也只取前 2000
+          entry.result = event.result ? String(event.result).slice(0, 4000) : '';
           if (visible && currentTimelineEl) {
             const idx = aiMsg.timeline.indexOf(entry);
             const el = currentTimelineEl.querySelector(`[data-tool-call-id="${toolCallId}"]`);
@@ -1100,7 +1108,8 @@
         } else {
           const newItem = {
             type: 'tool', toolName: event.toolName || 'unknown', toolCallId,
-            arguments: '', status: 'completed', result: event.result || '', showResult: false
+            arguments: '', status: 'completed',
+            result: event.result ? String(event.result).slice(0, 4000) : '', showResult: false
           };
           aiMsg.timeline.push(newItem);
           if (visible) {
@@ -1139,19 +1148,43 @@
       case EVENTS.COMPLETE:
         aiMsg.loading = false;
         if (visible) {
-          // 流式期间思考是纯文本，结束时按 timeline 数据全量重渲染一次，与历史会话视图统一为 markdown 终态
-          renderAllMessages();
+          // 流式期间思考/正文用纯文本增量渲染；结束时只把正文块转成 markdown 终态
+          // （思考本就是纯文本、工具结果流式时已是 markdown），避免超长 timeline
+          // 一次性全量 markdown 渲染卡死主线程导致页面崩溃
+          if (currentTimelineEl) {
+            const textEls = currentTimelineEl.querySelectorAll('.da-text-item');
+            const textDatas = aiMsg.timeline.filter(it => it.type === 'text');
+            textEls.forEach((el, i) => {
+              const d = textDatas[i];
+              if (d) {
+                el.innerHTML = Markdown.render(d.content);
+                if (typeof hljs !== 'undefined') {
+                  el.querySelectorAll('pre code').forEach(b => hljs.highlightElement(b));
+                }
+              }
+            });
+          }
           finishLoadingUI();
           clearStreamRefs();
         }
         break;
 
       case EVENTS.PAUSED:
-        // 用户主动中断：结束 loading 态 + 把 running 的工具卡片标记为 failed
+        // 用户主动中断：结束 loading 态 + 把 running 工具卡片标记 failed（局部更新 DOM，避免全量 markdown 重渲染）
         aiMsg.loading = false;
         if (visible) {
-          if (markRunningToolsFailed(aiMsg) && currentTimelineEl) {
-            currentTimelineEl.innerHTML = renderTimelineItems(aiMsg.timeline);
+          markRunningToolsFailed(aiMsg);
+          if (currentTimelineEl) {
+            currentTimelineEl.querySelectorAll('.da-tool.running').forEach(toolEl => {
+              const itemEl = toolEl.closest('.da-timeline-item');
+              if (itemEl) {
+                const dot = itemEl.querySelector('.da-timeline-dot');
+                if (dot) dot.classList.replace('running', 'failed');
+              }
+              toolEl.classList.replace('running', 'failed');
+              const statusEl = toolEl.querySelector('.da-tool-status');
+              if (statusEl) statusEl.innerHTML = '<i class="fas fa-times"></i>';
+            });
           }
           finishLoadingUI();
           clearStreamRefs();
@@ -1235,7 +1268,10 @@
     if (buffer.trim()) handleLine(buffer);
   }
 
-  /** 事件处理：记录游标、按序号防重、分发（仅当前会话可见时更新 DOM）。 */
+  /** 断点续传静默收集标志：刷新后全量补发时只改数据不渲染 DOM，收集完一次性渲染，避免逐个事件渲染卡死 */
+  let silentCollecting = false;
+
+  /** 事件处理：记录游标、按序号防重、分发（仅当前会话可见且非静默收集时更新 DOM）。 */
   function handleStreamEvent(cid, entry, event, eventId) {
     if (eventId) {
       const seq = Number(eventId);
@@ -1244,7 +1280,7 @@
       persistSeq(cid, seq);
     }
     if (event && event.type) {
-      processAgentxEvent(event, entry.aiMsg, cid === conversationId);
+      processAgentxEvent(event, entry.aiMsg, !silentCollecting && cid === conversationId);
     }
   }
 
@@ -1290,7 +1326,28 @@
         try { const d = await resp.json(); errMsg = d.msg || errMsg; } catch (e) {}
         throw new Error(errMsg);
       }
+      // 刷新后全量补发（lastSeq=0）时静默收集：只改数据不实时渲染，避免逐个事件 DOM 操作卡死页面
+      const silent = entry.lastSeq === 0 && cid === conversationId;
+      if (silent) silentCollecting = true;
       await consumeStream(resp, cid, entry);
+      if (silent) {
+        silentCollecting = false;
+        // 一次性纯文本渲染 + 把正文重渲染为 markdown（与流式结束体验一致）
+        if (currentTimelineEl) {
+          currentTimelineEl.innerHTML = renderTimelineItems(entry.aiMsg.timeline, true);
+          const textEls = currentTimelineEl.querySelectorAll('.da-text-item');
+          const textDatas = entry.aiMsg.timeline.filter(it => it.type === 'text');
+          textEls.forEach((el, i) => {
+            const d = textDatas[i];
+            if (d) {
+              el.innerHTML = Markdown.render(d.content);
+              if (typeof hljs !== 'undefined') {
+                el.querySelectorAll('pre code').forEach(b => hljs.highlightElement(b));
+              }
+            }
+          });
+        }
+      }
       entry.aiMsg.loading = false;
       finishStream(cid);
       if (cid === conversationId) { finishLoadingUI(); clearStreamRefs(); }

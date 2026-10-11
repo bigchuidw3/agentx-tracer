@@ -1,5 +1,6 @@
 package com.agentx.tracer.chat;
 
+import com.agentx.ai.core.chatmodels.DeepSeekV4ChatModel;
 import com.agentx.tracer.domain.entities.LlmModel;
 import com.agentx.tracer.mapper.LlmModelMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -10,6 +11,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.deepseek.DeepSeekChatOptions;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
@@ -39,7 +41,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 保证流式响应最后一帧携带 prompt/completion tokens，供 Token 计量消费。
  *
  * <p>内网自签 HTTPS 端点（如 https://IP:7443）信任所有证书；
- * 300s 响应超时适配长流式输出。
+ * 流式响应读取超时可配（{@code app.model.stream-timeout-seconds}，默认 60s）。
  *
  * @author agentx-console
  */
@@ -51,6 +53,10 @@ public class DynamicChatModelProvider implements ChatModelProvider {
     /** 默认温度（llm_model 暂未存 temperature，统一取此值） */
     @Value("${app.model.temperature:0.7}")
     private double defaultTemperature;
+
+    /** 流式响应读取超时（秒）：responseTimeout 为两次读之间的空闲超时，非总时长，全流式下可设短 */
+    @Value("${app.model.stream-timeout-seconds:60}")
+    private int streamTimeoutSeconds;
 
     private final LlmModelMapper llmModelMapper;
     private final DataSource dataSource;
@@ -155,12 +161,16 @@ public class DynamicChatModelProvider implements ChatModelProvider {
     }
 
     /**
-     * 构建 OpenAI 兼容 ChatModel。
+     * 构建 ChatModel：模型名含 deepseek 走 DeepSeek 适配，其余走 OpenAI 兼容。
+     *
+     * <p>DeepSeek 思考模式要求 assistant 消息的 reasoning_content 随请求回传，
+     * 该映射只存在于 DeepSeek 适配类（原生 OpenAiChatModel 不读消息 metadata），
+     * 压缩摘要等合成 assistant 消息缺思考链会被网关以 400 拒绝。
      */
     private ChatModel build(String baseUrl, String apiKey, String model, double temperature) {
         HttpClient httpClient = HttpClient.create()
                 .resolver(DefaultAddressResolverGroup.INSTANCE)
-                .responseTimeout(Duration.ofSeconds(300))
+                .responseTimeout(Duration.ofSeconds(streamTimeoutSeconds))
                 // 内网自签证书端点：信任所有证书
                 .secure(ssl -> {
                     try {
@@ -170,6 +180,25 @@ public class DynamicChatModelProvider implements ChatModelProvider {
                         throw new IllegalStateException("构建 SSL 上下文失败", e);
                     }
                 });
+
+        if (model != null && model.toLowerCase().contains("deepseek")) {
+            // 走框架的 DeepSeek 适配：由框架构建 API 客户端并应用网关适配
+            // （思考模式 reasoning_content 回传、流式 stream_options 注入等）
+            DeepSeekChatOptions deepSeekOptions = DeepSeekChatOptions.builder()
+                    .model(model)
+                    .temperature(temperature)
+                    .build();
+
+            return DeepSeekV4ChatModel.builder()
+                    .baseUrl(baseUrl)
+                    .apiKey(apiKey)
+                    .defaultOptions(deepSeekOptions)
+                    .restClientBuilder(RestClient.builder()
+                            .requestFactory(new ReactorClientHttpRequestFactory(httpClient)))
+                    .webClientBuilder(WebClient.builder()
+                            .clientConnector(new ReactorClientHttpConnector(httpClient)))
+                    .build();
+        }
 
         OpenAiApi openAiApi = OpenAiApi.builder()
                 .apiKey(apiKey)
