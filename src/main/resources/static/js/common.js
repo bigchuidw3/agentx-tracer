@@ -222,6 +222,11 @@
             const msg = (json && json.msg) || ('HTTP ' + resp.status);
             throw new Error(msg);
         }
+        // 业务状态码校验：后端业务错误（如"旧密码错误"）返回 HTTP 200 + code!=200，
+        // 必须在此识别为失败并抛异常，否则调用方会把失败当成功。
+        if (json && typeof json.code === 'number' && json.code !== 200) {
+            throw new Error(json.msg || ('业务错误 code=' + json.code));
+        }
         return json;
     }
 

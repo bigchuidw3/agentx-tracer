@@ -182,6 +182,53 @@ button:not(:disabled),
 .ax-field { display: flex; flex-direction: column; gap: 6px; }
 .ax-field label { font-size: 12px; color: var(--ax-text-2); font-weight: 500; }
 .ax-field .ax-input { width: 100%; box-sizing: border-box; }
+
+/* 表单字段内的小提示图标 + hover 气泡（用于上下文窗口等需补充说明的字段） */
+.ax-tip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    color: var(--ax-text-3);
+    cursor: help;
+    vertical-align: middle;
+}
+.ax-tip > i { font-size: 12px; }
+.ax-tip-bubble {
+    position: absolute;
+    left: -8px;
+    bottom: calc(100% + 8px);
+    width: 272px;
+    padding: 9px 12px;
+    background: var(--ax-text);
+    color: var(--ax-surface);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+    border-radius: 8px;
+    box-shadow: var(--ax-shadow-pop);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: opacity .16s ease, transform .16s ease, visibility .16s;
+    z-index: 100;
+    white-space: normal;
+    pointer-events: none;
+}
+.ax-tip-bubble::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 12px;
+    border: 5px solid transparent;
+    border-top-color: var(--ax-text);
+}
+.ax-tip:hover .ax-tip-bubble,
+.ax-tip:focus .ax-tip-bubble {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 .ax-field-span { grid-column: span 2; }
 .ax-price-row, .ax-context-row { display: flex; align-items: center; gap: 10px; }
 .ax-price-row .ax-input, .ax-context-row .ax-input { flex: 1; min-width: 0; }

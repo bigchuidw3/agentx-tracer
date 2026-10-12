@@ -1246,8 +1246,30 @@
     if (buffer.trim()) handleLine(buffer);
   }
 
-  /** 断点续传静默收集标志：刷新后全量补发时只改数据不渲染 DOM，收集完一次性渲染，避免逐个事件渲染卡死 */
+  /**
+   * 断点续传静默收集标志：刷新/重开页面后全量补发时，只改数据不渲染 DOM，
+   * 避免 replay 瞬间重放大量事件（长思考/多轮工具）逐个渲染卡死页面。
+   */
   let silentCollecting = false;
+  /** 静默收集的空闲检测定时器：补发事件是瞬间连续的，空闲超过阈值即判定补发结束。 */
+  let silentIdleTimer = null;
+  /** 补发与实时阶段的分界阈值（毫秒）。 */
+  const SILENT_IDLE_THRESHOLD = 120;
+
+  /**
+   * 静默收集期间重置空闲检测：补发事件连续到达时持续顺延；
+   * 空闲超过阈值说明补发已结束、进入实时阶段，此时全量重渲染一次并切回实时渲染。
+   */
+  function scheduleSilentFlush() {
+    clearTimeout(silentIdleTimer);
+    silentIdleTimer = setTimeout(() => {
+      if (!silentCollecting) return;
+      silentCollecting = false;
+      // 全量重渲染（含 markdown）：重建 DOM 并刷新 currentTimelineEl 引用，
+      // 之后实时事件在全新 DOM 上继续增量渲染。
+      renderAllMessages();
+    }, SILENT_IDLE_THRESHOLD);
+  }
 
   /** 事件处理：记录游标、按序号防重、分发（仅当前会话可见且非静默收集时更新 DOM）。 */
   function handleStreamEvent(cid, entry, event, eventId) {
@@ -1257,6 +1279,7 @@
       entry.lastSeq = seq;
       persistSeq(cid, seq);
     }
+    if (silentCollecting) scheduleSilentFlush();
     if (event && event.type) {
       processAgentxEvent(event, entry.aiMsg, !silentCollecting && cid === conversationId);
     }
@@ -1287,6 +1310,13 @@
     if (liveStreams.get(cid) !== entry) return;
     entry.controller = new AbortController();
     const token = Auth.getToken();
+    // 刷新后全量补发（lastSeq=0）走静默收集：replay 会瞬间重放历史事件（长思考/多轮工具），
+    // 逐个渲染会卡死页面，故先只改数据；补发结束由 scheduleSilentFlush 的空闲检测切回实时渲染。
+    const silent = entry.lastSeq === 0 && cid === conversationId;
+    if (silent) {
+      silentCollecting = true;
+      scheduleSilentFlush();
+    }
     try {
       const resp = await fetch('/api/agent/stream', {
         method: 'POST',
@@ -1304,33 +1334,21 @@
         try { const d = await resp.json(); errMsg = d.msg || errMsg; } catch (e) {}
         throw new Error(errMsg);
       }
-      // 刷新后全量补发（lastSeq=0）时静默收集：只改数据不实时渲染，避免逐个事件 DOM 操作卡死页面
-      const silent = entry.lastSeq === 0 && cid === conversationId;
-      if (silent) silentCollecting = true;
       await consumeStream(resp, cid, entry);
-      if (silent) {
+      // 流结束兜底：若补发完即 complete（无实时阶段），空闲检测可能尚未触发，这里补一次全量渲染
+      if (silentCollecting) {
+        clearTimeout(silentIdleTimer);
         silentCollecting = false;
-        // 一次性纯文本渲染 + 把正文重渲染为 markdown（与流式结束体验一致）
-        if (currentTimelineEl) {
-          currentTimelineEl.innerHTML = renderTimelineItems(entry.aiMsg.timeline, true);
-          const textEls = currentTimelineEl.querySelectorAll('.da-text-item');
-          const textDatas = entry.aiMsg.timeline.filter(it => it.type === 'text');
-          textEls.forEach((el, i) => {
-            const d = textDatas[i];
-            if (d) {
-              el.innerHTML = Markdown.render(d.content);
-              if (typeof hljs !== 'undefined') {
-                el.querySelectorAll('pre code').forEach(b => hljs.highlightElement(b));
-              }
-            }
-          });
-        }
+        renderAllMessages();
       }
       entry.aiMsg.loading = false;
       finishStream(cid);
       if (cid === conversationId) { finishLoadingUI(); clearStreamRefs(); }
       loadConversations(true);
     } catch (err) {
+      // 失败/中断：清理静默收集状态，避免空闲定时器残留导致误渲染
+      clearTimeout(silentIdleTimer);
+      silentCollecting = false;
       if (err && err.name === 'AbortError') {
         if (markRunningToolsFailed(entry.aiMsg) && cid === conversationId) {
           renderAllMessages();

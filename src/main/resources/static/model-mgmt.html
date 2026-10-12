@@ -76,7 +76,13 @@
                         <input class="ax-input mono" v-model="form.outputPrice" placeholder="2.00"/>
                     </div>
                     <div class="ax-field">
-                        <label>上下文窗口（用于统计页占用进度条）</label>
+                        <label>
+                            上下文窗口（用于上下文压缩与占用进度统计）
+                            <span class="ax-tip" tabindex="0">
+                                <i class="fas fa-circle-info"></i>
+                                <span class="ax-tip-bubble">请按模型真实上下文窗口如实填写；虚高会导致上下文压缩失效，长对话可能超出真实窗口、调用模型报错。</span>
+                            </span>
+                        </label>
                         <div class="ax-context-row">
                             <input class="ax-input mono" type="number" min="1" v-model.number="contextValue" placeholder="128"/>
                             <select class="ax-input mono ax-context-unit" v-model="contextUnit">
@@ -110,7 +116,7 @@
                     <li><b>保存即生效</b>：平台所有智能体调用立即走此配置，无需重启</li>
                     <li>成本按<b>当前单价实时折算</b>：成本 = 输入token/100万 × 输入单价 + 输出token/100万 × 输出单价，修改单价不追溯历史</li>
                     <li>Token 采集依赖 <code class="ax-mono">stream_options.include_usage</code>，平台已默认开启；端点不返回 usage 时该次调用 Token 记 0</li>
-                    <li>上下文窗口用于调用追踪-统计页签的上下文占用进度条与膨胀曲线</li>
+                    <li>上下文窗口用于上下文压缩（触发阈值按窗口比例计算）与调用追踪-统计页签的占用进度条</li>
                 </ul>
             </div>
         </main>

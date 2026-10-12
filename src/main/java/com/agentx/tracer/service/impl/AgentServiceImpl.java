@@ -76,6 +76,9 @@ public class AgentServiceImpl implements AgentService {
 
     private static final int TOOL_SEARCH_MAX_RESULTS = 10;
 
+    /** 上下文压缩触发比例：估算 token 达到窗口该比例时触发压缩，留 30% 给本轮输出与估算误差 */
+    private static final double CONTEXT_COMPACT_RATIO = 0.7;
+
     private final DataSource dataSource;
     private final SkillManager skillManager;
     private final TimeTool timeTool;
@@ -112,7 +115,6 @@ public class AgentServiceImpl implements AgentService {
 
     private ToolCallback[] alwaysOnBaseTools;
     private ToolCallback[] deferredTools = new ToolCallback[0];
-    private ContextPolicy contextPolicy;
     private final ToolSearchConfig toolSearchConfig =
             ToolSearchConfig.builder().maxResults(TOOL_SEARCH_MAX_RESULTS).build();
 
@@ -143,7 +145,6 @@ public class AgentServiceImpl implements AgentService {
     @PostConstruct
     void init() {
         this.alwaysOnBaseTools = buildAlwaysOnBaseTools();
-        this.contextPolicy = buildContextPolicy();
         this.sharedStateStore.initialize();
         log.info("[agentx-console] AgentServiceImpl 初始化完成 | 常驻={} | deferred={}",
                 alwaysOnBaseTools.length, deferredTools.length);
@@ -357,7 +358,7 @@ public class AgentServiceImpl implements AgentService {
                 .dataSource(dataSource)
                 .taskManager(sharedTaskManager)
                 .stateStore(sharedStateStore)
-                .contextPolicy(contextPolicy)
+                .contextPolicy(buildContextPolicy(userId))
                 .thinkingMode(ThinkingMode.REASONING_CONTENT)
                 .tools(alwaysOn)
                 .deferredTools(toolSearchConfig, deferredTools)
@@ -444,7 +445,16 @@ public class AgentServiceImpl implements AgentService {
         );
     }
 
-    private ContextPolicy buildContextPolicy() {
-        return ContextPolicy.defaults();
+    /**
+     * 按用户激活模型的上下文窗口构建压缩策略：tokenThreshold 取窗口的 {@link #CONTEXT_COMPACT_RATIO}，
+     * 留 30% 余量给本轮输出与估算误差，避免真实 token 顶到 100% 窗口才触发压缩。
+     * 窗口未配置时回退框架默认值。
+     */
+    private ContextPolicy buildContextPolicy(long userId) {
+        Integer window = chatModelProvider.contextWindow(userId);
+        int threshold = (window != null && window > 0)
+                ? (int) (window * CONTEXT_COMPACT_RATIO)
+                : ContextPolicy.DEFAULT_TOKEN_THRESHOLD;
+        return ContextPolicy.builder().tokenThreshold(threshold).build();
     }
 }

@@ -153,6 +153,12 @@ public class DynamicChatModelProvider implements ChatModelProvider {
         return activeModels.get(uid);
     }
 
+    @Override
+    public Integer contextWindow(Long userId) {
+        LlmModel model = getActiveModel(userId);
+        return model == null ? null : model.getContextWindow();
+    }
+
     /**
      * 兼容：返回任一激活模型（成本折算/统计在用户未明确时兜底用）。
      */

@@ -28,4 +28,13 @@ public interface ChatModelProvider {
     default boolean isAvailable(Long userId) {
         return getChatModel(userId) != null;
     }
+
+    /**
+     * 指定用户激活模型的上下文窗口大小；未配置或不支持时返回 null。
+     * <p>供上下文压缩阈值自适应（tokenThreshold 按窗口比例计算）使用。
+     * 默认实现返回 null，由实现方按需覆盖，保证接口向后兼容。
+     */
+    default Integer contextWindow(Long userId) {
+        return null;
+    }
 }
